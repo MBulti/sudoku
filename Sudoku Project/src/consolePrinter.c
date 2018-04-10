@@ -1,8 +1,9 @@
-#include "consolePrinter.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include "../include/consolePrinter.h"
 
-
-int printSudoku()
+void printSudoku()
 {
     srand(time(NULL));
     int a_sudoku[9][3][3];

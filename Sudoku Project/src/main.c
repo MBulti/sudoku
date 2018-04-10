@@ -2,11 +2,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "gameMaster.h"
-#include "consolePrinter.h"
-#include "validator.h"
-#include "constants.h"
+#include "../include/constants.h"
+#include "../include/gameMaster.h"
+#include "../include/consolePrinter.h"
+#include "../include/validator.h"
 
 int main()
 {
@@ -22,6 +21,7 @@ int main()
                 printf("Spiel beendet!\n");
                 return 0;
                 break;
+            //new Game
             case 2:
                 newGame();
                 CLS;

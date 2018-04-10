@@ -1,6 +1,6 @@
-#include "gameplay.h"
+#include "../include/gameplay.h"
 
 int waitForInput()
 {
-
+    return 0;
 }
