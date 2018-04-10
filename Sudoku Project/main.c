@@ -11,15 +11,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "include/consolePrinter.h"
 #include "include/gameMaster.h"
-#include "include/validator"
+#include "include/consolePrinter.h"
+#include "include/validator.h"
 
 int main()
 {
     int navigation = -1;
     
-    navigation = mainMenu();
+    navigation = mainMenu(navigation);
     
     while(1){
         switch (navigation) {
@@ -36,7 +36,7 @@ int main()
                 break;
                 
             default:
-                navigation = mainMenu();
+                navigation = mainMenu(navigation);
                 break;
         }
     }

@@ -1,7 +1,7 @@
 //  Created by Robin Winkler on 10.04.18.
 #include "gameMaster.h"
 
-int mainMenu(int status = 1)
+int mainMenu(int status)
 {
     char selection[] = "\0";
     
