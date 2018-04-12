@@ -6,7 +6,7 @@
 
 int mainMenu(int status)
 {
-    char selection[] = "\0";
+    char selection = '\0';
     
     CLS;
     
@@ -19,7 +19,11 @@ int mainMenu(int status)
     printf("n - neues Spiel\n");
     printf("e - Spiel beenden\n");
     printf("Eingabe: ");
-    scanf("%s", selection);
+    selection = getchar();
+    
+    if(selection == EOF){
+        selection = 1;
+    }
     
     return validateMenuInput(selection);
 }

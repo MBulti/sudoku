@@ -3,13 +3,9 @@
 #include "../include/constants.h"
 #include "../include/validator.h"
 
-int validateMenuInput(char *var)
+int validateMenuInput(char var)
 {
-    if(strlen(var) > 1){
-        return 0;
-    }
-
-    switch (var[0]) {
+    switch (var) {
         case 'n':
             return 2;
             break;
