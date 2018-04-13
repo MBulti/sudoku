@@ -21,7 +21,10 @@ int mainMenu(int status)
     printf("Eingabe: ");
     selection = getchar();
     
-    if(selection == EOF){
+    //to ignore all typed in characters after the first one
+    while(getchar() != '\n');
+    
+    if((int)selection == -1){
         selection = 1;
     }
     

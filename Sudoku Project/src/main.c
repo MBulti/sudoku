@@ -13,7 +13,7 @@ int main()
 
     navigation = mainMenu(navigation);
 
-    while(1){
+    while(navigation != 1){
         switch (navigation) {
             //exit
             case 1:
