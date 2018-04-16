@@ -1,5 +1,6 @@
 //  Created by Robin Winkler on 10.04.18.
 #include <string.h>
+#include <stdio.h>
 #include "../include/constants.h"
 #include "../include/validator.h"
 

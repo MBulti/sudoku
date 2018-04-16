@@ -23,9 +23,9 @@ int main()
                 break;
             //new Game
             case 2:
-                newGame();
                 CLS;
-                return 0;
+                navigation = newGame();
+                CLS;
                 break;
 
             default:
