@@ -20,13 +20,8 @@ int mainMenu(int status)
     printf("n - neues Spiel\n");
     printf("e - Spiel beenden\n");
     printf("Eingabe: ");
-    selection = getchar();
-    
-    EOL;
-    /*intercept invalid characters (old)
-    if((int)selection == -1 || selection == EOF){
-        selection = 1;
-    }*/
+    fflush(stdout);
+    read(0, &selection, 4);
     
     return validateMenuInput(selection);
 }
@@ -42,7 +37,8 @@ int newGame()
     printf("3 - schweres Level spielen\n");
     printf("z - Zurück zum Hauptmenü\n");
     printf("Eingabe: ");
-    selection = getchar();
+    fflush(stdout);
+    read(0, &selection, 4);
     
     switch (selection) {
         case '1':
@@ -55,7 +51,6 @@ int newGame()
             printf("schweres Level ausgewählt.");
             break;
         case 'z':
-            EOL;
             return -1;
             break;
         default:
