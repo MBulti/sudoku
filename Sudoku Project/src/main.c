@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <termios.h>
 #include "../include/constants.h"
 #include "../include/gameMaster.h"
 #include "../include/consolePrinter.h"

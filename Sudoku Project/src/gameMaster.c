@@ -42,13 +42,13 @@ int newGame()
     
     switch (selection) {
         case '1':
-            printf("leichtes Level ausgewählt.");
+            printf("leichtes Level ausgewählt.\n");
             break;
         case '2':
-            printf("mittleres Level ausgewählt.");
+            printf("mittleres Level ausgewählt.\n");
             break;
         case '3':
-            printf("schweres Level ausgewählt.");
+            printf("schweres Level ausgewählt.\n");
             break;
         case 'z':
             return -1;
