@@ -39,6 +39,7 @@ int newGame()
     printf("Eingabe: ");
     fflush(stdout);
     read(0, &selection, 4);
+    CLS;
     
     switch (selection) {
         case '1':
@@ -64,6 +65,7 @@ int newGame()
     int time_elapsed = 0.0;
 
     while (gameLoop) {
+        CLS;
         time_elapsed++;
         printf("Time elapsed: %i\n", time_elapsed);
         sleep(1);
