@@ -1,6 +1,2 @@
-#ifndef GAMEPLAY_H
-#define GAMEPLAY_H
-
-
-
-#endif // GAMEPLAY_H
+//evtl. Soduku Array rein und Soduku Array raus?
+int gameRoutine();

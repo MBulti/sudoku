@@ -59,17 +59,5 @@ int newGame()
             break;
     }
     
-    
-    //move this into another function
-    int gameLoop = 1;
-    int time_elapsed = 0.0;
-
-    while (gameLoop) {
-        CLS;
-        time_elapsed++;
-        printf("Time elapsed: %i\n", time_elapsed);
-        sleep(1);
-    }
-    
     return 0;
 }
