@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "../include/constants.h"
 #include "../include/gameMaster.h"
+#include "../include/consolePrinter.h"
 #include "../include/validator.h"
 
 int mainMenu(int status)
@@ -31,7 +32,7 @@ int newGame()
 
     printf("Levelauswahl:\n");
     printf("Bitte wählen:\n");
-    printf("1 - leichts Level spielen\n");
+    printf("1 - leichtes Level spielen\n");
     printf("2 - mittleres Level spielen\n");
     printf("3 - schweres Level spielen\n");
     printf("z - Zurück zum Hauptmenü\n");
