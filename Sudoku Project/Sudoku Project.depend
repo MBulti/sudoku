@@ -33,3 +33,25 @@
 	"constants.h"
 	"validator.h"
 
+1523384046 source:e:\sudoku project\src\consoleprinter.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"../include/consolePrinter.h"
+
+1523384016 e:\sudoku project\include\consoleprinter.h
+
+1523974627 source:e:\sudoku project\src\gamemaster.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameMaster.h"
+	"../include/validator.h"
+
+1524062827 e:\sudoku project\include\constants.h
+	<stdlib.h>
+
+1523523963 e:\sudoku project\include\gamemaster.h
+
+1523461873 e:\sudoku project\include\validator.h
+

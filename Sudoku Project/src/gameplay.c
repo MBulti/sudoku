@@ -1,4 +1,5 @@
 #include "../include/gameplay.h"
+#include "../include/constants.h"
 
 int waitForInput()
 {
@@ -9,7 +10,7 @@ int gameRoutine()
 {
     int gameLoop = 1;
     int time_elapsed = 0.0;
-    
+
     while (gameLoop) {
         CLS;
         time_elapsed++;
