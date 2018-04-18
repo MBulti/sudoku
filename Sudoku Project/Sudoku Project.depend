@@ -33,3 +33,52 @@
 	"constants.h"
 	"validator.h"
 
+1524086847 source:c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\src\consoleprinter.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"../include/consolePrinter.h"
+	"../include/constants.h"
+
+1524081859 c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\include\consoleprinter.h
+
+1524079910 source:c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\src\gamemaster.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameMaster.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1524077353 c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\include\constants.h
+	<stdlib.h>
+
+1523982966 c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\include\gamemaster.h
+
+1523982966 c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\include\validator.h
+
+1524081742 source:c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\src\validator.c
+	<string.h>
+	<stdio.h>
+	"../include/constants.h"
+	"../include/validator.h"
+	"../include/consolePrinter.h"
+	"../include/gameplay.h"
+
+1524082840 source:c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\src\gameplay.c
+	"../include/gameplay.h"
+	"../include/gameMaster.h"
+	"../include/constants.h"
+	<string.h>
+	<windows.h>
+
+1524081716 c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\include\gameplay.h
+
+1524077683 source:c:\users\fgute\documents\sudoku schule\git-schule-1\sudoku project\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/constants.h"
+	"../include/gameMaster.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+

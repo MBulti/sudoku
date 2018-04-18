@@ -34,10 +34,23 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="include/consolePrinter.h" />
-		<Unit filename="main.c">
+		<Unit filename="include/constants.h" />
+		<Unit filename="include/gameMaster.h" />
+		<Unit filename="include/gameplay.h" />
+		<Unit filename="include/validator.h" />
+		<Unit filename="src/consolePrinter.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/consolePrinter.c">
+		<Unit filename="src/gameMaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/gameplay.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/validator.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

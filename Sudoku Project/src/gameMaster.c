@@ -3,18 +3,19 @@
 #include <unistd.h>
 #include "../include/constants.h"
 #include "../include/gameMaster.h"
+#include "../include/consolePrinter.h"
 #include "../include/validator.h"
 
 int mainMenu(int status)
 {
     char selection = '\0';
-    
+
     CLS;
-    
+
     if (status == 0) {
         printf("Falsche Eingabe entdeckt!\n");
     }
-    
+
     printf("Hauptmenü:\n");
     printf("Bitte wählen:\n");
     printf("n - neues Spiel\n");
@@ -22,17 +23,17 @@ int mainMenu(int status)
     printf("Eingabe: ");
     fflush(stdout);
     read(0, &selection, 4);
-    
+
     return validateMenuInput(selection);
 }
 
 int newGame()
 {
     char selection = '\0';
-    
+
     printf("Levelauswahl:\n");
     printf("Bitte wählen:\n");
-    printf("1 - leichts Level spielen\n");
+    printf("1 - leichtes Level spielen\n");
     printf("2 - mittleres Level spielen\n");
     printf("3 - schweres Level spielen\n");
     printf("z - Zurück zum Hauptmenü\n");
@@ -40,10 +41,11 @@ int newGame()
     fflush(stdout);
     read(0, &selection, 4);
     CLS;
-    
+
     switch (selection) {
         case '1':
             printf("leichtes Level ausgewählt.\n");
+            //printSudoku();
             break;
         case '2':
             printf("mittleres Level ausgewählt.\n");
@@ -58,6 +60,8 @@ int newGame()
             return 0;
             break;
     }
-    
+
     return 0;
 }
+
+

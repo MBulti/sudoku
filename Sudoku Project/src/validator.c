@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include "../include/constants.h"
 #include "../include/validator.h"
+#include "../include/consolePrinter.h"
+#include "../include/gameplay.h"
 
 int validateMenuInput(char var)
 {
@@ -12,6 +14,11 @@ int validateMenuInput(char var)
             break;
 
         case 'e':
+            return 1;
+            break;
+
+        case 'a':
+            sudokuSolving();
             return 1;
             break;
 
