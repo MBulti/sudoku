@@ -41,7 +41,7 @@
 
 1523384016 e:\sudoku project\include\consoleprinter.h
 
-1523974627 source:e:\sudoku project\src\gamemaster.c
+1524088718 source:e:\sudoku project\src\gamemaster.c
 	<stdio.h>
 	<unistd.h>
 	"../include/constants.h"
@@ -51,7 +51,44 @@
 1524062827 e:\sudoku project\include\constants.h
 	<stdlib.h>
 
-1523523963 e:\sudoku project\include\gamemaster.h
+1524085666 e:\sudoku project\include\gamemaster.h
 
 1523461873 e:\sudoku project\include\validator.h
+
+1524087047 source:e:\sudoku project\src\gameplay.c
+	<stdio.h>
+	"../include/gameplay.h"
+	"../include/constants.h"
+	<windows.h>
+
+1523974754 e:\sudoku project\include\gameplay.h
+
+1524087046 source:e:\sudoku project\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<termios.h>
+	"../include/linuxLoader.h"
+	"../include/windowsLoader.h"
+	"../include/constants.h"
+	"../include/gameMaster.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1524085931 e:\sudoku project\include\linux.h
+
+1524086166 e:\sudoku project\include\windows.h
+
+1523971462 source:e:\sudoku project\src\validator.c
+	<string.h>
+	<stdio.h>
+	"../include/constants.h"
+	"../include/validator.h"
+
+1524086160 source:e:\sudoku project\src\windows.c
+
+1524085931 e:\sudoku project\include\linuxloader.h
+
+1524086166 e:\sudoku project\include\windowsloader.h
+
+1524086160 source:e:\sudoku project\src\windowsloader.c
 

@@ -1,5 +1,10 @@
+#include <stdio.h>
 #include "../include/gameplay.h"
 #include "../include/constants.h"
+
+#if defined(PLATFORM) && PLATFORM == 1
+    #include <windows.h>
+#endif
 
 int waitForInput()
 {
@@ -15,6 +20,13 @@ int gameRoutine()
         CLS;
         time_elapsed++;
         printf("Time elapsed: %i\n", time_elapsed);
-        sleep(1);
+        #if defined(PLATFORM) && PLATFORM == 2
+            sleep(1);
+
+        #else
+            Sleep(1000);
+        #endif
     }
+
+    return 0;
 }

@@ -2,3 +2,4 @@
 
 int mainMenu(int status);
 int newGame();
+char getInput();
