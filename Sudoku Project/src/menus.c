@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "../include/constants.h"
-#include "../include/gameMaster.h"
+#include "../include/gameplay.h"
+#include "../include/menus.h"
 #include "../include/consolePrinter.h"
 #include "../include/validator.h"
 
