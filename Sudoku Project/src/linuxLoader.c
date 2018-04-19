@@ -1,14 +1,14 @@
 #include <termios.h>
 #include <stdio.h>
 
-void init(){
+int init(){
     //works only on linux/mac
     //http://blog.eduardofleury.com/archives/2007/11/16
     struct termios tios, orig_tios;    /* terminal settings */
 
     /* Get current terminal settings */
     if (tcgetattr(0, &orig_tios)){
-        printf("Error getting current terminal settingsn");
+        printf("Error getting current terminal settings\n");
         return 3;
     }
 
@@ -39,4 +39,6 @@ void init(){
         printf("Could not apply all terminal settings\n");
         return 3;
     }
+    
+    return 0;
 }
