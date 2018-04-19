@@ -1,4 +1,5 @@
 #include <termios.h>
+#include <stdio.h>
 
 void init(){
     //works only on linux/mac

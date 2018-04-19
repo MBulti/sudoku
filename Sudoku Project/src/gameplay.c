@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "../include/gameplay.h"
+#include "../include/consolePrinter.h"
 #include "../include/constants.h"
 
 #if defined(PLATFORM) && PLATFORM == 1
@@ -23,7 +25,6 @@ int gameRoutine()
         printf("Time elapsed: %i\n", time_elapsed);
         #if defined(PLATFORM) && PLATFORM == 2
             sleep(1);
-
         #else
             Sleep(1000);
         #endif
@@ -36,7 +37,8 @@ void sudokuSolving()
 {
     srand(time(NULL));
     int a_sudoku[9][3][3];
-    int i, j, k, inputValue = 0, inputLength;
+    //          Unused Variable Warning
+    int i, j, k, /*inputValue = 0,*/ inputLength;
     char input[3];
     for (i = 0; i < 3; i++)
     {
