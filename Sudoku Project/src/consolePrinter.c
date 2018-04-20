@@ -6,7 +6,7 @@
 
 void printSudoku(int field[9][3][3])
 {
-    CLS;
+    //CLS;
     char a_sudokuPrint[9][3][3];
     int i, j, k;
     for (i = 0; i < 3; i++)

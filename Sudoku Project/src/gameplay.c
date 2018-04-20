@@ -20,10 +20,61 @@ int gameRoutine()
     int gameLoop = 1;
     int time_elapsed = 0.0;
 
+    int field[9][3][3] = {
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        //row
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        //row
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+        {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        },
+    };
+
     while (gameLoop) {
         CLS;
         time_elapsed++;
         printf("Time elapsed: %i\n", time_elapsed);
+        printSudoku(field);
         #if defined(PLATFORM) && PLATFORM == 2
             sleep(1);
         #else
