@@ -167,3 +167,39 @@ void sudokuSolving()
 
     printf("%c %c %c", input[0], input[1], input[2]);
 }
+
+int checkForValidSolution(int a_Sudoku[9][3][3]) //check for a correct solution
+{
+    //sudoku print [x][y][z]
+    //int a_assistArray[9] = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    int assistNumber = 1;
+    int block = 0;
+    int line = 0;
+    int row = 0;
+    int found = 0;
+    for(block = 0; block < 9; block++) //foreach block in the sudoku
+    {
+        assistNumber = 1; //number should be reseted after each block
+        for(line = 0; line < 3; line++)
+        {
+            for(row = 0; row < 3; row++)
+            {
+                if(a_Sudoku[block][line][row] == assistNumber)
+                {
+                    found = 1;
+                    assistNumber++; //increase number if it was found in one of the lines
+                    break;
+                }
+            }
+        }
+    }
+
+    return 1;
+}
+
+int checkForValidLine(int array[9])
+{
+    return 1;
+}
+
