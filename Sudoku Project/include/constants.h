@@ -17,6 +17,9 @@
 //to ignore all typed in characters after the first one
 #define EOL while(getchar() != '\n');
 
-//Arraymapping (line -> block / row -> block)
-const int a_ConvertLineNumberToBlock[9] = { 0, 0, 0, 3, 3, 3, 6, 6, 6};
-const int a_ConvertRowNumberToBlock[9] = { 0, 0, 0, 1, 1, 1, 2, 2, 2};
+int getBlockFromLine(int i);
+int getBlockFromRow(int i);
+int getBlockLineFromLine(int i);
+int getBlockRowFromRow(int i);
+
+
