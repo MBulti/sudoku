@@ -6,6 +6,7 @@
 #include "../include/menus.h"
 #include "../include/consolePrinter.h"
 #include "../include/validator.h"
+#include "../include/importer.h"
 
 int mainMenu(int status)
 {
@@ -30,6 +31,7 @@ int mainMenu(int status)
 int newGame()
 {
     char selection = '\0';
+    struct s_sudoku sudoku;
 
     printf("Levelauswahl:\n");
     printf("Bitte wählen:\n");
@@ -42,18 +44,20 @@ int newGame()
 
     CLS;
 
+    sudoku = getSudokuFromFile("E:\\Sudoku Project\\files\\testFile.sudoku");
+
     switch (selection) {
         case '1':
             printf("leichtes Level ausgewählt.\n");
-            gameRoutine();
+            gameRoutine(sudoku);
             break;
         case '2':
             printf("mittleres Level ausgewählt.\n");
-            gameRoutine();
+            gameRoutine(sudoku);
             break;
         case '3':
             printf("schweres Level ausgewählt.\n");
-            gameRoutine();
+            gameRoutine(sudoku);
             break;
         case 'z':
             return -1;

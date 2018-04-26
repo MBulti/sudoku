@@ -36,6 +36,7 @@
 		<Unit filename="include/consolePrinter.h" />
 		<Unit filename="include/constants.h" />
 		<Unit filename="include/gameplay.h" />
+		<Unit filename="include/importer.h" />
 		<Unit filename="include/linuxLoader.h" />
 		<Unit filename="include/menus.h" />
 		<Unit filename="include/validator.h" />
@@ -43,13 +44,20 @@
 		<Unit filename="src/consolePrinter.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/constants.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/gameplay.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/importer.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/linuxLoader.c">
 			<Option compilerVar="CC" />
 			<Option compile="0" />
 			<Option link="0" />
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />

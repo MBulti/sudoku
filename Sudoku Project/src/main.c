@@ -43,5 +43,7 @@ int main()
         }
     }
 
+    CLS;
+    printf("Spiel beendet!\n");
     return 0;
 }

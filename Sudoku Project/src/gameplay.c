@@ -2,9 +2,9 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include "../include/constants.h"
 #include "../include/gameplay.h"
 #include "../include/consolePrinter.h"
-#include "../include/constants.h"
 
 #if defined(PLATFORM) && PLATFORM == 1
     #include <windows.h>
@@ -15,66 +15,20 @@ int waitForInput()
     return 0;
 }
 
-int gameRoutine()
+int gameRoutine(struct s_sudoku sudoku)
 {
     int gameLoop = 1;
     int time_elapsed = 0.0;
 
-    int field[9][3][3] = {
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        //row
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        //row
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-        {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        },
-    };
+    //Debug
+    //printf("%i", sudoku.a_sudoku[1][2][2]);
+    //getchar();
 
     while (gameLoop) {
         CLS;
         time_elapsed++;
         printf("Time elapsed: %i\n", time_elapsed);
-        printSudoku(field);
+        printSudoku(sudoku.a_sudoku);
         #if defined(PLATFORM) && PLATFORM == 2
             sleep(1);
         #else

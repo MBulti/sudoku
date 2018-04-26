@@ -33,14 +33,14 @@
 	"constants.h"
 	"validator.h"
 
-1524256640 source:e:\sudoku project\src\consoleprinter.c
+1524734869 source:e:\sudoku project\src\consoleprinter.c
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
 	"../include/consolePrinter.h"
 	"../include/constants.h"
 
-1524256159 e:\sudoku project\include\consoleprinter.h
+1524257021 e:\sudoku project\include\consoleprinter.h
 
 1524089104 source:e:\sudoku project\src\gamemaster.c
 	<stdio.h>
@@ -50,26 +50,26 @@
 	"../include/consolePrinter.h"
 	"../include/validator.h"
 
-1524240265 e:\sudoku project\include\constants.h
+1524730335 e:\sudoku project\include\constants.h
 	<stdlib.h>
 
 1524085666 e:\sudoku project\include\gamemaster.h
 
 1523461873 e:\sudoku project\include\validator.h
 
-1524256614 source:e:\sudoku project\src\gameplay.c
+1524733174 source:e:\sudoku project\src\gameplay.c
 	<stdio.h>
 	<string.h>
 	<unistd.h>
 	<time.h>
+	"../include/constants.h"
 	"../include/gameplay.h"
 	"../include/consolePrinter.h"
-	"../include/constants.h"
 	<windows.h>
 
-1524088786 e:\sudoku project\include\gameplay.h
+1524730049 e:\sudoku project\include\gameplay.h
 
-1524121677 source:e:\sudoku project\src\main.c
+1524257095 source:e:\sudoku project\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<termios.h>
@@ -84,7 +84,7 @@
 
 1524086166 e:\sudoku project\include\windows.h
 
-1524088786 source:e:\sudoku project\src\validator.c
+1524257021 source:e:\sudoku project\src\validator.c
 	<string.h>
 	<stdio.h>
 	"../include/constants.h"
@@ -94,15 +94,15 @@
 
 1524086160 source:e:\sudoku project\src\windows.c
 
-1524123248 e:\sudoku project\include\linuxloader.h
+1524257021 e:\sudoku project\include\linuxloader.h
 
-1524123255 e:\sudoku project\include\windowsloader.h
+1524257021 e:\sudoku project\include\windowsloader.h
 
-1524123280 source:e:\sudoku project\src\windowsloader.c
+1524257021 source:e:\sudoku project\src\windowsloader.c
 
-1524085666 e:\sudoku project\include\menus.h
+1524730199 e:\sudoku project\include\menus.h
 
-1524121723 source:e:\sudoku project\src\menus.c
+1524732090 source:e:\sudoku project\src\menus.c
 	<stdio.h>
 	<unistd.h>
 	"../include/constants.h"
@@ -110,4 +110,16 @@
 	"../include/menus.h"
 	"../include/consolePrinter.h"
 	"../include/validator.h"
+	"../include/importer.h"
+
+1524733136 source:e:\sudoku project\src\importer.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/importer.h"
+
+1524731793 e:\sudoku project\include\importer.h
+
+1524563831 source:e:\sudoku project\src\constants.c
+	"../include/constants.h"
 

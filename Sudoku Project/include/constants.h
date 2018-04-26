@@ -21,5 +21,9 @@ int getBlockFromLine(int i);
 int getBlockFromRow(int i);
 int getBlockLineFromLine(int i);
 int getBlockRowFromRow(int i);
+int getBlockFromLineAndRow(int row, int line);
 
-
+struct s_sudoku {
+    int a_sudoku[9][3][3];
+    int error;
+};
