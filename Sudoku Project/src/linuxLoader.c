@@ -1,3 +1,4 @@
+//  Created by Robin Winkler on 18.04.18.
 #include <termios.h>
 #include <stdio.h>
 
@@ -39,6 +40,6 @@ int init(){
         printf("Could not apply all terminal settings\n");
         return 3;
     }
-    
+
     return 0;
 }

@@ -24,7 +24,7 @@ struct s_sudoku getSudokuFromFile(char filename[]){
         for(j=0; j<(strlen(str)); j++){
             if(str[j] != '\n'){
                 sudoku.a_sudoku[getBlockFromLineAndRow(j,i)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //minus 48 da die numbern im ascii code bei 48 bzw bei dem zeichen 0 anfangen
-                printf("Test: %c, Block: %i, Spalte: %i, Zeile: %i\n", str[j], getBlockFromLineAndRow(j,i), getBlockLineFromLine(j), getBlockRowFromRow(i));
+                //printf("Test: %c, Block: %i, Spalte: %i, Zeile: %i\n", str[j], getBlockFromLineAndRow(j,i), getBlockLineFromLine(j), getBlockRowFromRow(i));
             }
         }
         i++;
