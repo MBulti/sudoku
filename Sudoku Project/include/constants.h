@@ -3,11 +3,17 @@
 
 //--- Windows ---//
 #define PLATFORM 1 //Windows
-#define CLS system("cls")
 
 //--- Mac/Linux --//
 //#define PLATFORM 2 //Linux/Mac
-//#define CLS system("clear")
+
+#if defined(PLATFORM) && PLATFORM == 1
+    //Windows specific commands
+    #define CLS system("cls")
+#elif defined(PLATFORM) && PLATFORM == 2
+    //Linux specific commands
+    #define CLS system("clear")
+#endif
 
 //https://en.wikipedia.org/wiki/ANSI_escape_code
 //https://stackoverflow.com/questions/33025599/move-the-cursor-in-a-c-program
@@ -17,12 +23,7 @@
 //to ignore all typed in characters after the first one
 #define EOL while(getchar() != '\n');
 
-int getBlockFromLine(int i);
-int getBlockFromRow(int i);
-int getBlockLineFromLine(int i);
-int getBlockRowFromRow(int i);
-int getBlockFromLineAndRow(int row, int line);
-
+//main game structure
 struct s_sudoku {
     int a_sudoku[9][3][3];
     int error;

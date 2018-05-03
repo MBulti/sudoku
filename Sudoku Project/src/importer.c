@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "../include/constants.h"
+#include "../include/converter.h"
 #include "../include/importer.h"
 
 #define MAXCHAR 255

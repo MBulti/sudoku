@@ -5,6 +5,11 @@
 #include "../include/consolePrinter.h"
 #include "../include/constants.h"
 
+/*
+prints sudoku
+params: int array[9][3][3] - sudoku
+returns: nothing
+*/
 void printSudoku(int field[9][3][3])
 {
     //CLS;

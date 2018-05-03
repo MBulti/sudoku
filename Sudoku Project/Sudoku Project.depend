@@ -33,7 +33,7 @@
 	"constants.h"
 	"validator.h"
 
-1524735126 source:e:\sudoku project\src\consoleprinter.c
+1524821495 source:e:\sudoku project\src\consoleprinter.c
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
@@ -50,14 +50,14 @@
 	"../include/consolePrinter.h"
 	"../include/validator.h"
 
-1524730335 e:\sudoku project\include\constants.h
+1525342537 e:\sudoku project\include\constants.h
 	<stdlib.h>
 
 1524085666 e:\sudoku project\include\gamemaster.h
 
 1524821179 e:\sudoku project\include\validator.h
 
-1524733174 source:e:\sudoku project\src\gameplay.c
+1524821651 source:e:\sudoku project\src\gameplay.c
 	<stdio.h>
 	<string.h>
 	<unistd.h>
@@ -67,7 +67,7 @@
 	"../include/consolePrinter.h"
 	<windows.h>
 
-1524730049 e:\sudoku project\include\gameplay.h
+1524821806 e:\sudoku project\include\gameplay.h
 
 1524257095 source:e:\sudoku project\src\main.c
 	<stdio.h>
@@ -84,10 +84,11 @@
 
 1524086166 e:\sudoku project\include\windows.h
 
-1524257021 source:e:\sudoku project\src\validator.c
+1525342192 source:e:\sudoku project\src\validator.c
 	<string.h>
 	<stdio.h>
 	"../include/constants.h"
+	"../include/converter.h"
 	"../include/validator.h"
 	"../include/consolePrinter.h"
 	"../include/gameplay.h"
@@ -98,11 +99,11 @@
 
 1524257021 e:\sudoku project\include\windowsloader.h
 
-1524257021 source:e:\sudoku project\src\windowsloader.c
+1524821750 source:e:\sudoku project\src\windowsloader.c
 
 1524821844 e:\sudoku project\include\menus.h
 
-1524732090 source:e:\sudoku project\src\menus.c
+1524821727 source:e:\sudoku project\src\menus.c
 	<stdio.h>
 	<unistd.h>
 	"../include/constants.h"
@@ -112,14 +113,20 @@
 	"../include/validator.h"
 	"../include/importer.h"
 
-1524743937 source:e:\sudoku project\src\importer.c
+1525342126 source:e:\sudoku project\src\importer.c
 	<stdio.h>
 	<string.h>
 	"../include/constants.h"
+	"../include/converter.h"
 	"../include/importer.h"
 
 1524821822 e:\sudoku project\include\importer.h
 
-1524563831 source:e:\sudoku project\src\constants.c
+1524821576 source:e:\sudoku project\src\constants.c
 	"../include/constants.h"
+
+1525342030 source:e:\sudoku project\src\converter.c
+	"../include/converter.h"
+
+1525342078 e:\sudoku project\include\converter.h
 

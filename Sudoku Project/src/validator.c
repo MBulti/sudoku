@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "../include/constants.h"
+#include "../include/converter.h"
 #include "../include/validator.h"
 #include "../include/consolePrinter.h"
 #include "../include/gameplay.h"
