@@ -17,9 +17,9 @@ int validateMenuInput(char var)
         case 'e':
             return 1;
             break;
-
+        //Debug
         case 'a':
-            sudokuSolving();
+            //sudokuSolving();
             return 1;
             break;
 
@@ -51,7 +51,7 @@ int checkForValidSolution(int a_Sudoku[9][3][3]) //check for a correct solution
             return 0; //row is invalid
     }
 
-    printf("Your Sudoku is correct.");
+    //printf("Your Sudoku is correct.");
     return 1;
 }
 

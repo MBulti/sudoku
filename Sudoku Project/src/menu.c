@@ -3,10 +3,11 @@
 #include <unistd.h>
 #include "../include/constants.h"
 #include "../include/gameplay.h"
-#include "../include/menus.h"
+#include "../include/menu.h"
 #include "../include/consolePrinter.h"
 #include "../include/validator.h"
 #include "../include/importer.h"
+#include "../include/input.h"
 
 int mainMenu(int status)
 {
@@ -49,15 +50,15 @@ int newGame()
     switch (selection) {
         case '1':
             printf("leichtes Level ausgewählt.\n");
-            gameRoutine(sudoku);
+            return gameRoutine(sudoku);
             break;
         case '2':
             printf("mittleres Level ausgewählt.\n");
-            gameRoutine(sudoku);
+            return gameRoutine(sudoku);
             break;
         case '3':
             printf("schweres Level ausgewählt.\n");
-            gameRoutine(sudoku);
+            return gameRoutine(sudoku);
             break;
         case 'z':
             return -1;
@@ -68,17 +69,4 @@ int newGame()
     }
 
     return 1;
-}
-
-char getInput(){
-    char selection = '\0';
-
-    #if defined(PLATFORM) && PLATFORM == 2
-        fflush(stdout);
-        read(0, &selection, 4);
-    #else
-        selection = getchar();
-        EOL;
-    #endif
-    return selection;
 }

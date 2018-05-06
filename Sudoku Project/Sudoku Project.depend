@@ -33,14 +33,15 @@
 	"constants.h"
 	"validator.h"
 
-1524821495 source:e:\sudoku project\src\consoleprinter.c
+1525622970 source:e:\sudoku project\src\consoleprinter.c
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
-	"../include/consolePrinter.h"
 	"../include/constants.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
 
-1524821775 e:\sudoku project\include\consoleprinter.h
+1525621577 e:\sudoku project\include\consoleprinter.h
 
 1524089104 source:e:\sudoku project\src\gamemaster.c
 	<stdio.h>
@@ -50,14 +51,14 @@
 	"../include/consolePrinter.h"
 	"../include/validator.h"
 
-1525342537 e:\sudoku project\include\constants.h
+1525346511 e:\sudoku project\include\constants.h
 	<stdlib.h>
 
 1524085666 e:\sudoku project\include\gamemaster.h
 
 1524821179 e:\sudoku project\include\validator.h
 
-1524821651 source:e:\sudoku project\src\gameplay.c
+1525622529 source:e:\sudoku project\src\gameplay.c
 	<stdio.h>
 	<string.h>
 	<unistd.h>
@@ -67,16 +68,16 @@
 	"../include/consolePrinter.h"
 	<windows.h>
 
-1524821806 e:\sudoku project\include\gameplay.h
+1525622154 e:\sudoku project\include\gameplay.h
 
-1524257095 source:e:\sudoku project\src\main.c
+1525622501 source:e:\sudoku project\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<termios.h>
 	"../include/linuxLoader.h"
 	"../include/windowsLoader.h"
 	"../include/constants.h"
-	"../include/menus.h"
+	"../include/menu.h"
 	"../include/consolePrinter.h"
 	"../include/validator.h"
 
@@ -84,7 +85,7 @@
 
 1524086166 e:\sudoku project\include\windows.h
 
-1525342192 source:e:\sudoku project\src\validator.c
+1525622374 source:e:\sudoku project\src\validator.c
 	<string.h>
 	<stdio.h>
 	"../include/constants.h"
@@ -129,4 +130,24 @@
 	"../include/converter.h"
 
 1525342078 e:\sudoku project\include\converter.h
+
+1525618535 e:\sudoku project\include\menu.h
+
+1525623211 source:e:\sudoku project\src\menu.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+	"../include/importer.h"
+	"../include/input.h"
+
+1525620312 source:e:\sudoku project\src\input.c
+	<stdio.h>
+	"../include/constants.h"
+	"../include/input.h"
+
+1525620322 e:\sudoku project\include\input.h
 

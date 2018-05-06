@@ -19,55 +19,28 @@ int waitForInput()
 int gameRoutine(struct s_sudoku sudoku)
 {
     int gameLoop = 1;
-    int time_elapsed = 0.0;
+    int moves = 0;
 
+    int i, j, k, inputLength;
+    char input[3];
     //Debug
     //printf("%i", sudoku.a_sudoku[1][2][2]);
     //getchar();
 
+    printSudoku(sudoku);
     while (gameLoop)
     {
         CLS;
-        time_elapsed++;
-        printf("Time elapsed: %i\n", time_elapsed);
-        printSudoku(sudoku.a_sudoku);
-        #if defined(PLATFORM) && PLATFORM == 2
-                sleep(1);
-        #else
-                Sleep(1000);
-        #endif
-    }
-
-    return 0;
-}
-
-void sudokuSolving()
-{
-    srand(time(NULL));
-    int a_sudoku[9][3][3];
-    //          Unused Variable Warning
-    int i, j, k, /*inputValue = 0,*/ inputLength;
-    char input[3];
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            for (k = 0; k < 9; k++)
-            {
-                a_sudoku[k][i][j] = rand() % 10;
-            }
-        }
-    }
-    input[0] = 'q';
-    printSudoku(a_sudoku);
-
-    do
-    {
+        printf("Moves: %i\n", moves);
+        printSudoku(sudoku);
+        //wait(1);
+        //TODO: in input.c als Funktion packen
         inputLength = read(0, &input, 9);
 
         if (input[0] == 'q')
         {
             printf("Spiel wird beendet!");
+            gameLoop = 0;
         }
         else if (inputLength != 4)
         {
@@ -75,7 +48,7 @@ void sudokuSolving()
         }
         else
         {
-            printf("Hello!");
+            //printf("Hello!");
             switch(input[0])
             {
             case 'a'...'c':
@@ -88,45 +61,53 @@ void sudokuSolving()
                 k = 3;
                 break;
             default:
-                printf("Bla");
+                //printf("Bla");
                 break;
             }
-            printf("k: %i", k);
+            //printf("k: %i\n", k);
 
             i = k;
             k = input[1] - '0';
+            //printf("k: %i\n", k);
             k--;
+            //printf("k: %i\n", k);
             k = (int)(k / 3);
+            //printf("k: %i\n", k);
             k = 3 * k;
+            //printf("k: %i\n", k);
             k = i + k;
+            //printf("k: %i\n", k);
             k--;
+            //printf("k: %i\n", k);
 
             //k = k + (3 * (int)((input[1] - '0') - 1) / 3);
 
             //printf("k: %i", k);
 
             i = (int)input[0];
+            //printf("i: %i\n", i);
             i--;
+            //printf("i: %i\n", i);
             i = i % 3;
+            //printf("i: %i\n", i);
 
             j = input[1] - '0';
+            //printf("j: %i\n", j);
             j--;
+            //printf("j: %i\n", j);
             j = j % 3;
+            //printf("j: %i\n", j);
 
-            //printf("k: %i, i: %i, j: %i", k, i, j);
-            a_sudoku[k][i][j] = input[2] - '0';
+            printf("k: %i, i: %i, j: %i\n", k, i, j);
+            //printf("j: %i\n", j);
+            sudoku.a_sudoku[k][i][j] = input[2] - '0';
         }
 
-        printSudoku(a_sudoku);
-
+        if(printSudoku(sudoku)){
+            return 3;
+        }
+        moves++;
     }
-    while(input[0] != 'q');
 
-    printf("%c %c %c", input[0], input[1], input[2]);
-}
-
-void waitForUserInput()
-{
-    char wait;
-    scanf("%c", &wait);
+    return 0;
 }

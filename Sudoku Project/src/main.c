@@ -10,7 +10,7 @@
 #endif
 
 #include "../include/constants.h"
-#include "../include/menus.h"
+#include "../include/menu.h"
 #include "../include/consolePrinter.h"
 #include "../include/validator.h"
 
@@ -35,6 +35,13 @@ int main()
                 CLS;
                 navigation = newGame();
                 CLS;
+                break;
+            case 3:
+                CLS;
+                printf("Spiel gewonnen!\n");
+                printf("Zurück zum Hauptmenü!\n");
+                navigation = -1;
+                EOL;
                 break;
 
             default:

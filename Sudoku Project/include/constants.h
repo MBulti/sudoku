@@ -10,9 +10,11 @@
 #if defined(PLATFORM) && PLATFORM == 1
     //Windows specific commands
     #define CLS system("cls")
+    #define wait(X) (Sleep(X*1000))
 #elif defined(PLATFORM) && PLATFORM == 2
     //Linux specific commands
     #define CLS system("clear")
+    #define wait(X) (sleep(X))
 #endif
 
 //https://en.wikipedia.org/wiki/ANSI_escape_code
