@@ -9,27 +9,29 @@
 
 int validateMenuInput(char var)
 {
-    switch (var) {
-        case 'n':
-            return 2;
-            break;
+    switch (var)
+    {
+    case 'n':
+        return 2;
+        break;
 
-        case 'e':
-            return 1;
-            break;
-        //Debug
-        case 'a':
-            //sudokuSolving();
-            return 1;
-            break;
+    case 'e':
+        return 1;
+        break;
+    //Debug
+    case 'a':
+        //sudokuSolving();
+        return 1;
+        break;
 
-        default:
-            return 0;
-            break;
+    default:
+        return 0;
+        break;
     }
     return 0;
 }
 
+//correct solution by Moritz Bulthaup
 int checkForValidSolution(int a_Sudoku[9][3][3]) //check for a correct solution
 {
     int block = 0;
@@ -158,4 +160,57 @@ int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
     }
 
     return 1;
+}
+
+//current test for backtracking by Moritz Bulthaup
+
+int isNumberInBlock(int a_Sudoku[9][3][3], int blockNumber, int numberToCheck)
+{
+    int line = 0;
+    int row = 0;
+    for(line = 0; line < 3; line++)
+    {
+        for(row = 0; row < 3; row++)
+        {
+            if(a_Sudoku[blockNumber][line][row] == numberToCheck)
+                return 1; //number is already in block
+        }
+    }
+    return 0; //number is still missing -> feel free to put it here;
+}
+
+int isNumberInLine(int a_Sudoku[9][3][3], int lineNumber, int numberToCheck)
+{
+    int blockNumber = getBlockFromLine(lineNumber); //0-8
+    int line = getBlockLineFromLine(lineNumber); //0-2
+
+    int block;
+    int row;
+    for(block = blockNumber; block < blockNumber+3; block++)
+    {
+        for(row = 0; row < 3; row++)
+        {
+            if(a_Sudoku[block][line][row] == numberToCheck)
+                return 1; //number is already in line
+        }
+    }
+    return 0; //number is still missing -> feel free to put it here
+}
+
+int isNumberInRow(int a_Sudoku[9][3][3], int rowNumber, int numberToCheck)
+{
+    int blockNumber = getBlockFromRow(rowNumber); //0-8
+    int row = getBlockRowFromRow(rowNumber); //0-2
+
+    int block;
+    int line;
+    for(block = blockNumber; block < blockNumber+7; block = block+3)
+    {
+        for(line = 0; line < 3; line++)
+        {
+            if(a_Sudoku[block][line][row] == numberToCheck)
+                return 1; //number is already in row
+        }
+    }
+    return 0; //number is still missing -> feel free to put it here
 }
