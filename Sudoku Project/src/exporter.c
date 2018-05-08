@@ -11,14 +11,11 @@
 //http://www.zentut.com/c-tutorial/c-read-text-file/
 struct s_sudoku writeSudokuToFile(struct s_sudoku sudoku){
     FILE *fp;
-    printf("Lade Datei!");
     fp = fopen("files\\save.sudoku", "w");
     if(fp == NULL)
     {
-        printf("Datei wurde nicht gefunden! Moment...");
         freopen("files\\save.sudoku", "w", fp);
     }
-    printf("Hab jetzt die Datei!");
 
     int i, j;
     /*
@@ -38,7 +35,6 @@ struct s_sudoku writeSudokuToFile(struct s_sudoku sudoku){
     {
         for (j = 0; j < 9; j++)
         {
-            printf("Schreibe: %c", (sudoku.a_sudoku[getBlockFromLineAndRow(i, j)][getBlockRowFromRow(j)][getBlockLineFromLine(i)]) + '0');
             fprintf(fp, "%c", ((sudoku.a_sudoku[getBlockFromLineAndRow(i, j)][getBlockRowFromRow(j)][getBlockLineFromLine(i)]) + '0'));
         }
         fprintf(fp, "\n");
