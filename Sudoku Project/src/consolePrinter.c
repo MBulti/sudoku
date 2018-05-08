@@ -13,7 +13,6 @@ returns: nothing
 */
 int printSudoku(struct s_sudoku sudoku)
 {
-    //CLS;
     char a_visualSudoku[9][3][3];
     int i, j, k;
     int fullyFilled = 1;
@@ -28,8 +27,7 @@ int printSudoku(struct s_sudoku sudoku)
                 {
                     a_visualSudoku[k][i][j] = '.';
                     fullyFilled = 0;
-                }
-                else
+                }else
                 {
                     a_visualSudoku[k][i][j] = sudoku.a_sudoku[k][i][j] + '0';
                 }
@@ -37,17 +35,19 @@ int printSudoku(struct s_sudoku sudoku)
         }
     }
 
-    if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku) == 1){
+    if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku) == 1)
+    {
         return 1;
-    }else{
+    }
+    else
+        {
         //Debug
-        //printf("%i\n", sudoku.a_sudoku[0][0][0]);
-        //printf("%c\n", a_visualSudoku[0][0][0]);
+        //printf("%i\n", sudoku.a_sudoku[1][0][0]);
+        //printf("%c\n", a_visualSudoku[1][0][0]);
         //getchar();
 
         //String für die Ausgabe auf der Konsole
         printf("Zum Füllen eines Feldes erst die Spalte wählen, dann die Zeile und zum Schluss den einzutragenden Wert!\n");
-        printf("Beispiel: e48\n\n\n\n\n");
         printf("     a b c   d e f   g h i  \n");
         printf("   +-------+-------+-------+\n");
 
@@ -64,7 +64,7 @@ int printSudoku(struct s_sudoku sudoku)
                        a_visualSudoku[k+2][0][j], a_visualSudoku[k+2][1][j], a_visualSudoku[k+2][2][j]);
                 i++;
             }
-            printf("   +-------+-------+-------+\n\n");
+            printf("   +-------+-------+-------+\n");
         }
         return 0;
     }

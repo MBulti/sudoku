@@ -1,0 +1,240 @@
+# depslib dependency file v1.0
+1523368596 source:c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"gameMaster.h"
+	"consolePrinter.h"
+	"validator.h"
+	"constants.h"
+
+1523352551 c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\include\consoleprinter.h
+
+1523367737 source:c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\src\consoleprinter.c
+	"consolePrinter.h"
+	<stdlib.h>
+
+1523367439 source:c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\src\gameplay.c
+	"gameplay.h"
+
+1523366439 c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\include\gameplay.h
+
+1523368197 c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\include\gamemaster.h
+
+1523368197 c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\include\validator.h
+
+1523368565 c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\include\constants.h
+
+1523368750 source:c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\src\gamemaster.c
+	"constants.h"
+	"gameMaster.h"
+
+1523368696 source:c:\users\fgute\documents\sudoku projekt\git-schule-1\sudoku project\src\validator.c
+	"constants.h"
+	"validator.h"
+
+1525764468 source:e:\sudoku project\src\consoleprinter.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"../include/constants.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1525621577 e:\sudoku project\include\consoleprinter.h
+
+1524089104 source:e:\sudoku project\src\gamemaster.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameMaster.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1525711858 e:\sudoku project\include\constants.h
+	<stdlib.h>
+	<windows.h>
+
+1524085666 e:\sudoku project\include\gamemaster.h
+
+1524821179 e:\sudoku project\include\validator.h
+
+1525763790 source:e:\sudoku project\src\gameplay.c
+	<stdio.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/consolePrinter.h"
+	"../include/input.h"
+	<windows.h>
+
+1525622154 e:\sudoku project\include\gameplay.h
+
+1525623315 source:e:\sudoku project\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<termios.h>
+	"../include/linuxLoader.h"
+	"../include/windowsLoader.h"
+	"../include/constants.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1524085931 e:\sudoku project\include\linux.h
+
+1524086166 e:\sudoku project\include\windows.h
+
+1525694233 source:e:\sudoku project\src\validator.c
+	<string.h>
+	<stdio.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/validator.h"
+	"../include/consolePrinter.h"
+	"../include/gameplay.h"
+
+1524086160 source:e:\sudoku project\src\windows.c
+
+1524821834 e:\sudoku project\include\linuxloader.h
+
+1524257021 e:\sudoku project\include\windowsloader.h
+
+1524821750 source:e:\sudoku project\src\windowsloader.c
+
+1524821844 e:\sudoku project\include\menus.h
+
+1524821727 source:e:\sudoku project\src\menus.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/menus.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+	"../include/importer.h"
+
+1525703897 source:e:\sudoku project\src\importer.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/importer.h"
+
+1524821822 e:\sudoku project\include\importer.h
+
+1524821576 source:e:\sudoku project\src\constants.c
+	"../include/constants.h"
+
+1525342030 source:e:\sudoku project\src\converter.c
+	"../include/converter.h"
+
+1525342078 e:\sudoku project\include\converter.h
+
+1525618535 e:\sudoku project\include\menu.h
+
+1525702634 source:e:\sudoku project\src\menu.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+	"../include/importer.h"
+	"../include/input.h"
+
+1525764115 source:e:\sudoku project\src\input.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/constants.h"
+	"../include/input.h"
+	<conio.h>
+
+1525705204 e:\sudoku project\include\input.h
+
+1525705846 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\converter.c
+	"../include/converter.h"
+
+1525705846 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\converter.h
+
+1525765844 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\gameplay.c
+	<stdio.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/consolePrinter.h"
+	"../include/input.h"
+	<windows.h>
+
+1525765844 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\constants.h
+	<stdlib.h>
+	<windows.h>
+
+1525705846 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\gameplay.h
+
+1525705846 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\consoleprinter.h
+
+1525765844 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\input.h
+
+1525765844 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\importer.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/importer.h"
+
+1525705846 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\importer.h
+
+1525765844 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\input.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/constants.h"
+	"../include/input.h"
+	<conio.h>
+
+1525705846 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<termios.h>
+	"../include/linuxLoader.h"
+	"../include/windowsLoader.h"
+	"../include/constants.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1525705846 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\linuxloader.h
+
+1524513055 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\windowsloader.h
+
+1525705846 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\menu.h
+
+1525708386 c:\users\moritz\desktop\sudoku projekt\sudoku project\include\validator.h
+
+1525763643 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\menu.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+	"../include/importer.h"
+	"../include/input.h"
+
+1525765844 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\validator.c
+	<string.h>
+	<stdio.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/validator.h"
+	"../include/consolePrinter.h"
+	"../include/gameplay.h"
+
+1525705846 source:c:\users\moritz\desktop\sudoku projekt\sudoku project\src\windowsloader.c
+
