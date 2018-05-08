@@ -33,7 +33,7 @@
 	"constants.h"
 	"validator.h"
 
-1525768002 source:e:\sudoku project\src\consoleprinter.c
+1525773352 source:e:\sudoku project\src\consoleprinter.c
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
@@ -73,7 +73,7 @@
 
 1525773114 e:\sudoku project\include\gameplay.h
 
-1525623315 source:e:\sudoku project\src\main.c
+1525784667 source:e:\sudoku project\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<termios.h>
@@ -88,7 +88,7 @@
 
 1524086166 e:\sudoku project\include\windows.h
 
-1525765527 source:e:\sudoku project\src\validator.c
+1525773246 source:e:\sudoku project\src\validator.c
 	<string.h>
 	<stdio.h>
 	"../include/constants.h"
@@ -136,7 +136,7 @@
 
 1525618535 e:\sudoku project\include\menu.h
 
-1525702634 source:e:\sudoku project\src\menu.c
+1525783330 source:e:\sudoku project\src\menu.c
 	<stdio.h>
 	<unistd.h>
 	"../include/constants.h"
@@ -147,7 +147,7 @@
 	"../include/importer.h"
 	"../include/input.h"
 
-1525772836 source:e:\sudoku project\src\input.c
+1525783648 source:e:\sudoku project\src\input.c
 	<stdio.h>
 	<stdlib.h>
 	"../include/constants.h"
@@ -155,4 +155,107 @@
 	<conio.h>
 
 1525705204 e:\sudoku project\include\input.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\consoleprinter.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"../include/constants.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1525772599 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\constants.h
+	<stdlib.h>
+	<windows.h>
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\consoleprinter.h
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\validator.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\converter.c
+	"../include/converter.h"
+
+1525783075 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\converter.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\gameplay.c
+	<stdio.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/gameplay.h"
+	"../include/consolePrinter.h"
+	"../include/input.h"
+	<windows.h>
+
+1525783075 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\gameplay.h
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\input.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\validator.c
+	<string.h>
+	<stdio.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/validator.h"
+	"../include/consolePrinter.h"
+	"../include/gameplay.h"
+
+1525774412 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\exporter.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/exporter.h"
+
+1525767736 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\exporter.h
+
+1525774149 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\importer.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/importer.h"
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\importer.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\input.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/constants.h"
+	"../include/input.h"
+	<conio.h>
+
+1525772656 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/constants.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\menu.h
+
+1525783224 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\menu.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+	"../include/importer.h"
+	"../include/input.h"
+
+1525765953 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\windowsloader.c
+
+1525783795 source:e:\sudoku project\src\exporter.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/exporter.h"
+
+1525783795 e:\sudoku project\include\exporter.h
 
