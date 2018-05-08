@@ -33,6 +33,9 @@ int newGame()
 {
     char selection = '\0';
     struct s_sudoku sudoku;
+    //https://cboard.cprogramming.com/c-programming/88690-path-file-relative-program.html
+    char path[MAX_PATH];
+    GetCurrentDirectory(sizeof(path), path);
 
     printf("Levelauswahl:\n");
     printf("Bitte wählen:\n");
@@ -45,7 +48,7 @@ int newGame()
 
     CLS;
 
-    sudoku = getSudokuFromFile(".\\files\\testFile.sudoku");
+    sudoku = getSudokuFromFile(strcat(path, "\\files\\testFile.sudoku"));
 
     switch (selection) {
         case '1':

@@ -36,6 +36,7 @@ int printSudoku(struct s_sudoku sudoku)
 
     if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku) == 1)
     {
+        printf("Your Sudoku is solved correctly\n\n");
         return 1;
     }else{
         //Debug

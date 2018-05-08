@@ -38,22 +38,30 @@ int checkForValidSolution(int a_Sudoku[9][3][3]) //check for a correct solution
     for(block = 0; block < 9; block++) //foreach block in the sudoku
     {
         if(isBlockValid(a_Sudoku, block) == 0)
+        {
             return 0; //block is invalid
+        }
+
     }
     int line = 0;
     for(line = 0; line < 9; line++) //foreach line in the sudoku
     {
         if(isLineValid(a_Sudoku, line) == 0)
+        {
             return 0; //line is invalid
+        }
+
     }
     int row = 0;
     for(row = 0; row < 9; row++)    //foreach row in the sudoku
     {
         if(isRowValid(a_Sudoku, row) == 0)
+        {
             return 0; //row is invalid
+        }
+
     }
 
-    //printf("Your Sudoku is correct.");
     return 1;
 }
 
@@ -70,12 +78,15 @@ int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
             for(arrayNumber = 0; arrayNumber < 9; arrayNumber++)
             {
                 if(a_assistArray[arrayNumber] == 0)
+                {
                     continue;
+                }
+
 
                 if(a_Sudoku[blockNumber][row][line] == a_assistArray[arrayNumber])
                 {
                     a_assistArray[arrayNumber] = 0; //remove found number
-                    continue;
+                    break;
                 }
             }
 
@@ -85,7 +96,9 @@ int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
     for(i = 0; i < 9; i++)
     {
         if(a_assistArray[i] != 0)
+        {
             return 0; //one number is missing
+        }
     }
     return 1;
 }
@@ -94,9 +107,6 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
 {
     int blockNumber = getBlockFromLine(lineNumber); //0-8
     int line = getBlockLineFromLine(lineNumber); //0-2
-
-    printf("Blocknumber: %i from Linenumber: %i\n\n", blockNumber, lineNumber);
-    printf("Line: %i from Linenumber: %i\n\n", line, lineNumber);
 
     int block;
     int row;
@@ -109,16 +119,14 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
             for(arrayNumber = 0; arrayNumber < 9; arrayNumber++)
             {
                 if(a_assistArray[arrayNumber] == 0)
+                {
                     continue;
+                }
 
-                    printf("Sudokunumber %i in Block %i, Line %i, Row %i", a_Sudoku[block][row][line], block, line, row);
-                    getchar();
                 if(a_Sudoku[block][row][line] == a_assistArray[arrayNumber])
                 {
-                    printf("Removed %i from Array", a_assistArray[arrayNumber]);
-                    getchar();
                     a_assistArray[arrayNumber] = 0;
-                    continue;
+                    break;
                 }
             }
         }
@@ -128,11 +136,8 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
     {
         if(a_assistArray[i] != 0)
         {
-            printf("Something is missing");
-            getchar();
             return 0; //one number is missing
         }
-
     }
 
     return 1;
@@ -159,7 +164,7 @@ int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
                 if(a_Sudoku[block][row][line] == a_assistArray[arrayNumber])
                 {
                     a_assistArray[arrayNumber] = 0;
-                    continue;
+                    break;
                 }
             }
         }
@@ -168,13 +173,21 @@ int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
     for(i = 0; i < 9; i++)
     {
         if(a_assistArray[i] != 0)
+        {
             return 0; //one number is missing
+        }
     }
 
     return 1;
 }
 
 //current test for backtracking by Moritz Bulthaup
+
+int solveSudoku(int a_Sudoku[9][3][3])
+{
+
+}
+
 
 int isNumberInBlock(int a_Sudoku[9][3][3], int blockNumber, int numberToCheck)
 {
