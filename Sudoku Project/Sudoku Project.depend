@@ -33,7 +33,7 @@
 	"constants.h"
 	"validator.h"
 
-1525622970 source:e:\sudoku project\src\consoleprinter.c
+1525764468 source:e:\sudoku project\src\consoleprinter.c
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
@@ -51,14 +51,15 @@
 	"../include/consolePrinter.h"
 	"../include/validator.h"
 
-1525346511 e:\sudoku project\include\constants.h
+1525711858 e:\sudoku project\include\constants.h
 	<stdlib.h>
+	<windows.h>
 
 1524085666 e:\sudoku project\include\gamemaster.h
 
 1524821179 e:\sudoku project\include\validator.h
 
-1525622529 source:e:\sudoku project\src\gameplay.c
+1525763790 source:e:\sudoku project\src\gameplay.c
 	<stdio.h>
 	<string.h>
 	<unistd.h>
@@ -66,11 +67,12 @@
 	"../include/constants.h"
 	"../include/gameplay.h"
 	"../include/consolePrinter.h"
+	"../include/input.h"
 	<windows.h>
 
 1525622154 e:\sudoku project\include\gameplay.h
 
-1525622501 source:e:\sudoku project\src\main.c
+1525623315 source:e:\sudoku project\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<termios.h>
@@ -85,7 +87,7 @@
 
 1524086166 e:\sudoku project\include\windows.h
 
-1525622374 source:e:\sudoku project\src\validator.c
+1525694233 source:e:\sudoku project\src\validator.c
 	<string.h>
 	<stdio.h>
 	"../include/constants.h"
@@ -114,7 +116,7 @@
 	"../include/validator.h"
 	"../include/importer.h"
 
-1525342126 source:e:\sudoku project\src\importer.c
+1525703897 source:e:\sudoku project\src\importer.c
 	<stdio.h>
 	<string.h>
 	"../include/constants.h"
@@ -133,7 +135,7 @@
 
 1525618535 e:\sudoku project\include\menu.h
 
-1525623211 source:e:\sudoku project\src\menu.c
+1525702634 source:e:\sudoku project\src\menu.c
 	<stdio.h>
 	<unistd.h>
 	"../include/constants.h"
@@ -144,10 +146,12 @@
 	"../include/importer.h"
 	"../include/input.h"
 
-1525620312 source:e:\sudoku project\src\input.c
+1525764115 source:e:\sudoku project\src\input.c
 	<stdio.h>
+	<stdlib.h>
 	"../include/constants.h"
 	"../include/input.h"
+	<conio.h>
 
-1525620322 e:\sudoku project\include\input.h
+1525705204 e:\sudoku project\include\input.h
 

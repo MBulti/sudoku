@@ -17,6 +17,10 @@ int validateMenuInput(char var)
         case 'e':
             return 1;
             break;
+
+        case '\0':
+            return -1;
+            break;
         //Debug
         case 'a':
             //sudokuSolving();
