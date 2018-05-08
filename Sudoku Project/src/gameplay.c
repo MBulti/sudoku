@@ -8,6 +8,7 @@
 #include "../include/gameplay.h"
 #include "../include/consolePrinter.h"
 #include "../include/input.h"
+#include "../include/exporter.h"
 
 #if defined(PLATFORM) && PLATFORM == 1
     #include <windows.h>
@@ -83,6 +84,10 @@ int gameRoutine(struct s_sudoku sudoku)
                 break;
             case 'm':
                 return -1;
+                break;
+            case 's':
+                writeSudokuToFile(sudoku);
+                return 1;
                 break;
             default:
                 break;

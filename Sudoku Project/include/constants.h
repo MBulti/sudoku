@@ -28,6 +28,6 @@
 
 //main game structure
 struct s_sudoku {
-    int a_sudoku[9][3][3];
+    int a_sudoku[9][3][3]; //Block, Row, Line
     int error;
 };
