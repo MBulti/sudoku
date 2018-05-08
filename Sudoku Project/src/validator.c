@@ -72,7 +72,7 @@ int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
                 if(a_assistArray[arrayNumber] == 0)
                     continue;
 
-                if(a_Sudoku[blockNumber][line][row] == a_assistArray[arrayNumber])
+                if(a_Sudoku[blockNumber][row][line] == a_assistArray[arrayNumber])
                 {
                     a_assistArray[arrayNumber] = 0; //remove found number
                     continue;
@@ -95,6 +95,9 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
     int blockNumber = getBlockFromLine(lineNumber); //0-8
     int line = getBlockLineFromLine(lineNumber); //0-2
 
+    printf("Blocknumber: %i from Linenumber: %i\n\n", blockNumber, lineNumber);
+    printf("Line: %i from Linenumber: %i\n\n", line, lineNumber);
+
     int block;
     int row;
     int arrayNumber = 0;
@@ -108,8 +111,12 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
                 if(a_assistArray[arrayNumber] == 0)
                     continue;
 
-                if(a_Sudoku[block][line][row] == a_assistArray[arrayNumber])
+                    printf("Sudokunumber %i in Block %i, Line %i, Row %i", a_Sudoku[block][row][line], block, line, row);
+                    getchar();
+                if(a_Sudoku[block][row][line] == a_assistArray[arrayNumber])
                 {
+                    printf("Removed %i from Array", a_assistArray[arrayNumber]);
+                    getchar();
                     a_assistArray[arrayNumber] = 0;
                     continue;
                 }
@@ -120,7 +127,12 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
     for(i = 0; i < 9; i++)
     {
         if(a_assistArray[i] != 0)
+        {
+            printf("Something is missing");
+            getchar();
             return 0; //one number is missing
+        }
+
     }
 
     return 1;
@@ -144,7 +156,7 @@ int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
                 if(a_assistArray[arrayNumber] == 0)
                     continue;
 
-                if(a_Sudoku[block][line][row] == a_assistArray[arrayNumber])
+                if(a_Sudoku[block][row][line] == a_assistArray[arrayNumber])
                 {
                     a_assistArray[arrayNumber] = 0;
                     continue;
@@ -214,3 +226,7 @@ int isNumberInRow(int a_Sudoku[9][3][3], int rowNumber, int numberToCheck)
     }
     return 0; //number is still missing -> feel free to put it here
 }
+
+//MB sidenote: maybe use some code from
+//https://codereview.stackexchange.com/questions/37430/sudoku-solver-in-c
+//https://spin.atomicobject.com/2012/06/18/solving-sudoku-in-c-with-recursive-backtracking/

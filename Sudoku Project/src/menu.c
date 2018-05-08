@@ -45,7 +45,9 @@ int newGame()
 
     CLS;
 
-    sudoku = getSudokuFromFile("E:\\Sudoku Project\\files\\testFile.sudoku");
+    //sudoku = getSudokuFromFile("E:\\Sudoku Project\\files\\testFile.sudoku");
+    sudoku = getSudokuFromFile("C:\\Users\\Moritz\\Desktop\\Sudoku Projekt\\Sudoku Project\\files\\testFile.sudoku");
+
 
     switch (selection) {
         case '1':

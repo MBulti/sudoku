@@ -37,7 +37,7 @@ int printSudoku(struct s_sudoku sudoku)
         }
     }
 
-    if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku)){
+    if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku) == 1){
         return 1;
     }else{
         //Debug
