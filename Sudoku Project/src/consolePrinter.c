@@ -44,7 +44,7 @@ int printSudoku(struct s_sudoku sudoku)
         //getchar();
 
         //String für die Ausgabe auf der Konsole
-        printf("Zum Füllen eines Feldes erst die Spalte wählen, dann die Zeile und zum Schluss den einzutragenden Wert!\n");
+        printf("Zum Füllen eines Feldes erst die Spalte wählen, dann die Zeile und zum Schluss den einzutragenden Wert!\n\n");
         printf("     a b c   d e f   g h i  \n");
         printf("   +-------+-------+-------+\n");
 

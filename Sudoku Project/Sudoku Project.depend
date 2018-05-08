@@ -33,7 +33,7 @@
 	"constants.h"
 	"validator.h"
 
-1525764468 source:e:\sudoku project\src\consoleprinter.c
+1525768002 source:e:\sudoku project\src\consoleprinter.c
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
@@ -57,20 +57,21 @@
 
 1524085666 e:\sudoku project\include\gamemaster.h
 
-1524821179 e:\sudoku project\include\validator.h
+1525765353 e:\sudoku project\include\validator.h
 
-1525763790 source:e:\sudoku project\src\gameplay.c
+1525773104 source:e:\sudoku project\src\gameplay.c
 	<stdio.h>
 	<string.h>
 	<unistd.h>
 	<time.h>
 	"../include/constants.h"
+	"../include/converter.h"
 	"../include/gameplay.h"
 	"../include/consolePrinter.h"
 	"../include/input.h"
 	<windows.h>
 
-1525622154 e:\sudoku project\include\gameplay.h
+1525773114 e:\sudoku project\include\gameplay.h
 
 1525623315 source:e:\sudoku project\src\main.c
 	<stdio.h>
@@ -87,7 +88,7 @@
 
 1524086166 e:\sudoku project\include\windows.h
 
-1525694233 source:e:\sudoku project\src\validator.c
+1525765527 source:e:\sudoku project\src\validator.c
 	<string.h>
 	<stdio.h>
 	"../include/constants.h"
@@ -128,10 +129,10 @@
 1524821576 source:e:\sudoku project\src\constants.c
 	"../include/constants.h"
 
-1525342030 source:e:\sudoku project\src\converter.c
+1525772502 source:e:\sudoku project\src\converter.c
 	"../include/converter.h"
 
-1525342078 e:\sudoku project\include\converter.h
+1525772508 e:\sudoku project\include\converter.h
 
 1525618535 e:\sudoku project\include\menu.h
 
@@ -146,7 +147,7 @@
 	"../include/importer.h"
 	"../include/input.h"
 
-1525764115 source:e:\sudoku project\src\input.c
+1525772836 source:e:\sudoku project\src\input.c
 	<stdio.h>
 	<stdlib.h>
 	"../include/constants.h"
