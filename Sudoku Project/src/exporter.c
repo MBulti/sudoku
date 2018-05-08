@@ -9,13 +9,16 @@
 #define MAXCHARACTERS 255
 
 //http://www.zentut.com/c-tutorial/c-read-text-file/
-struct s_sudoku writeSudokuFromFile(struct s_sudoku sudoku){
+struct s_sudoku writeSudokuToFile(struct s_sudoku sudoku){
     FILE *fp;
-    fp = fopen("C:\\Users\\fgute\\Documents\\Sudoku SourceTree\\Sudoku Project\\files\\save.sudoku", "w");
+    printf("Lade Datei!");
+    fp = fopen("files\\save.sudoku", "w");
     if(fp == NULL)
     {
-        freopen("C:\\Users\\fgute\\Documents\\Sudoku SourceTree\\Sudoku Project\\files\\save.sudoku", "w", fp);
+        printf("Datei wurde nicht gefunden! Moment...");
+        freopen("files\\save.sudoku", "w", fp);
     }
+    printf("Hab jetzt die Datei!");
 
     int i, j;
     /*
@@ -35,7 +38,8 @@ struct s_sudoku writeSudokuFromFile(struct s_sudoku sudoku){
     {
         for (j = 0; j < 9; j++)
         {
-            fprintf(fp, (sudoku.a_sudoku[getBlockFromLineAndRow(i, j)][getBlockRowFromRow(j)][getBlockLineFromLine(i)]) + '0');
+            printf("Schreibe: %c", (sudoku.a_sudoku[getBlockFromLineAndRow(i, j)][getBlockRowFromRow(j)][getBlockLineFromLine(i)]) + '0');
+            fprintf(fp, "%c", ((sudoku.a_sudoku[getBlockFromLineAndRow(i, j)][getBlockRowFromRow(j)][getBlockLineFromLine(i)]) + '0'));
         }
         fprintf(fp, "\n");
     }
