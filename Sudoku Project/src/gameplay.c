@@ -41,7 +41,7 @@ int gameRoutine(struct s_sudoku sudoku)
 
         cursorGoTo(x,y);
 
-        //TODO: cursor restriction to play area, exit functionality, input send to array
+        //TODO: exit functionality, input send to array
         switch(getMove())
         {
             case -1: //left
