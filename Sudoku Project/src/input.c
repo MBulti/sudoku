@@ -64,17 +64,11 @@ int getMove(){
                     case 80: //down
                         return -2;
                         break;
-                    case '0' ... '9':
+                    /*case '0' ... '9':
                         return move;
-                        break;
-                    case 'e':
-                        return 'e';
-                        break;
-                    case 'm':
-                        return 'm';
-                        break;
+                        break;*/
                     default:
-
+                        return move;
                         break;
                 }
             }
