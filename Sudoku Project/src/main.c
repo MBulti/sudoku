@@ -5,6 +5,8 @@
 #if defined(PLATFORM) && PLATFORM == 2
     #include <termios.h>
     #include "../include/linuxLoader.h"
+#else
+    #include "../include/windowsLoader.h"
 #endif
 
 #include "../include/constants.h"
