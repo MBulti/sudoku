@@ -156,3 +156,97 @@
 
 1525705204 e:\sudoku project\include\input.h
 
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\consoleprinter.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"../include/constants.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1525772599 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\constants.h
+	<stdlib.h>
+	<windows.h>
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\consoleprinter.h
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\validator.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\converter.c
+	"../include/converter.h"
+
+1525783075 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\converter.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\gameplay.c
+	<stdio.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/gameplay.h"
+	"../include/consolePrinter.h"
+	"../include/input.h"
+	<windows.h>
+
+1525783075 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\gameplay.h
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\input.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\validator.c
+	<string.h>
+	<stdio.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/validator.h"
+	"../include/consolePrinter.h"
+	"../include/gameplay.h"
+
+1525774412 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\exporter.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/exporter.h"
+
+1525767736 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\exporter.h
+
+1525774149 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\importer.c
+	<stdio.h>
+	<string.h>
+	"../include/constants.h"
+	"../include/converter.h"
+	"../include/importer.h"
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\importer.h
+
+1525783075 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\input.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/constants.h"
+	"../include/input.h"
+	<conio.h>
+
+1525772656 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/constants.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+
+1525765953 c:\users\fgute\documents\sudoku sourcetree\sudoku project\include\menu.h
+
+1525783224 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\menu.c
+	<stdio.h>
+	<unistd.h>
+	"../include/constants.h"
+	"../include/gameplay.h"
+	"../include/menu.h"
+	"../include/consolePrinter.h"
+	"../include/validator.h"
+	"../include/importer.h"
+	"../include/input.h"
+
+1525765953 source:c:\users\fgute\documents\sudoku sourcetree\sudoku project\src\windowsloader.c
+

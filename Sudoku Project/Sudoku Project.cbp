@@ -36,10 +36,12 @@
 		<Unit filename="include/consolePrinter.h" />
 		<Unit filename="include/constants.h" />
 		<Unit filename="include/converter.h" />
+		<Unit filename="include/exporter.h" />
 		<Unit filename="include/gameplay.h" />
 		<Unit filename="include/importer.h" />
+		<Unit filename="include/input.h" />
 		<Unit filename="include/linuxLoader.h" />
-		<Unit filename="include/menus.h" />
+		<Unit filename="include/menu.h" />
 		<Unit filename="include/validator.h" />
 		<Unit filename="include/windowsLoader.h" />
 		<Unit filename="src/consolePrinter.c">
@@ -48,10 +50,16 @@
 		<Unit filename="src/converter.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/exporter.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/gameplay.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/importer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/input.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/linuxLoader.c">
@@ -63,7 +71,7 @@
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/menus.c">
+		<Unit filename="src/menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/validator.c">
