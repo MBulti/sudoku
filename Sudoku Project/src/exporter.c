@@ -9,7 +9,7 @@
 #define MAXCHARACTERS 255
 
 //http://www.zentut.com/c-tutorial/c-read-text-file/
-struct s_sudoku writeSudokuToFile(struct s_sudoku sudoku){
+void writeSudokuToFile(struct s_sudoku sudoku){
     FILE *fp;
     fp = fopen("files\\save.sudoku", "w");
     if(fp == NULL)

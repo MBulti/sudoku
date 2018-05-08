@@ -19,6 +19,7 @@ int gameRoutine(struct s_sudoku sudoku)
     int gameLoop = 1;
     int moves = 0;
     int input = 0;
+    const int offset = 8;
 
     int x = 16;
     int y = 11;
@@ -26,7 +27,7 @@ int gameRoutine(struct s_sudoku sudoku)
     int row = 0;
     int line = 0;
 
-    int cursorBoundary[2][2] = {{4,5},{28,17}};
+    int cursorBoundary[2][2] = {{4,offset},{28,12+offset}};
 
     while (gameLoop)
     {
@@ -36,9 +37,11 @@ int gameRoutine(struct s_sudoku sudoku)
         if(printSudoku(sudoku))
         {
             gameLoop = 0;
+            return 3;
         }
 
-        printf("x: %i, y: %i", (x/2)-cursorBoundary[0][0]+2, y-cursorBoundary[0][1]);
+        //printf("x: %i, y: %i", (x/2)-cursorBoundary[0][0]+2, y-cursorBoundary[0][1]);
+        //printf("x: %i, y: %i", x, y);
         //getchar();
 
         cursorGoTo(x,y);

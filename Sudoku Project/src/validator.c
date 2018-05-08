@@ -185,7 +185,7 @@ int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
 
 int solveSudoku(int a_Sudoku[9][3][3])
 {
-
+    return 1;
 }
 
 

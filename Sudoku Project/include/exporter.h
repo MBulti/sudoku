@@ -1,1 +1,1 @@
-struct s_sudoku writeSudokuToFile(struct s_sudoku sudoku);
+void writeSudokuToFile(struct s_sudoku sudoku);
