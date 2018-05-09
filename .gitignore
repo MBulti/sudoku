@@ -1,6 +1,7 @@
-"Sudoku Project/obj"
-"Sudoku Project/a.out"
-"Sudoku Project/Sudoku Project.depend"
-"Sudoku Project/Sudoku Project.layout"
-"Sudoku Project/Sudoku Project.cbd"
-"Sudoku Project/bin"
+Sudoku Project/obj
+Sudoku Project/bin
+save.sudoku
+Sudoku Project.layout
+Sudoku Project.depend
+Sudoku Project.cbp
+a.out
