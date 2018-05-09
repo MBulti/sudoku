@@ -24,18 +24,19 @@ int main()
 
     while(navigation != 1){
         switch (navigation) {
-            //exit
+            //beenden
             case 1:
                 CLS;
                 printf("Spiel beendet!\n");
                 return 0;
                 break;
-            //new Game
+            //neues Spiel
             case 2:
                 CLS;
                 navigation = newGame();
                 CLS;
                 break;
+            //gewonnen
             case 3:
                 CLS;
                 printf("Spiel gewonnen!\n");
@@ -43,7 +44,7 @@ int main()
                 navigation = -1;
                 EOL;
                 break;
-
+            //Abfrage
             default:
                 navigation = mainMenu(navigation);
                 break;

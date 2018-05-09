@@ -1,6 +1,7 @@
 //  Created by Robin Winkler on 10.04.18.
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 #include "../include/constants.h"
 #include "../include/gameplay.h"
 #include "../include/menu.h"
@@ -33,9 +34,15 @@ int newGame()
 {
     char selection = '\0';
     struct s_sudoku sudoku;
-    //https://cboard.cprogramming.com/c-programming/88690-path-file-relative-program.html
-    char path[MAX_PATH];
-    GetCurrentDirectory(sizeof(path), path);
+    #if defined(PLATFORM) && PLATFORM == 1
+        //https://cboard.cprogramming.com/c-programming/88690-path-file-relative-program.html
+        char path[MAX_PATH];
+        GetCurrentDirectory(sizeof(path), path);
+    #elif defined(PLATFORM) && PLATFORM == 2
+        char path[1024];
+        getcwd(path, sizeof(path));
+    #endif
+    //printf("path: %s", path);
 
     printf("Levelauswahl:\n");
     printf("Bitte wählen:\n");
@@ -48,20 +55,28 @@ int newGame()
 
     CLS;
 
-    sudoku = getSudokuFromFile(strcat(path, "\\files\\testFile.sudoku"));
+    //TODO: Errorhandling vom sudoku
 
     switch (selection) {
         case '1':
             printf("leichtes Level ausgewählt.\n");
-            return gameRoutine(sudoku);
+            sudoku = getSudokuFromFile(strcat(path, "\\files\\relax.sudoku"));
             break;
         case '2':
             printf("mittleres Level ausgewählt.\n");
-            return gameRoutine(sudoku);
+            sudoku = getSudokuFromFile(strcat(path, "\\files\\genius.sudoku"));
             break;
         case '3':
             printf("schweres Level ausgewählt.\n");
-            return gameRoutine(sudoku);
+            sudoku = getSudokuFromFile(strcat(path, "\\files\\mastermind.sudoku"));
+            break;
+        case '0':
+            //return 1;
+            //EASTER EGG
+            CLS;
+            printf("Geheimes Easter Egg gefunden!\n");
+            sudoku = getSudokuFromFile(strcat(path, "\\files\\easterEgg.sudoku"));
+            getchar();
             break;
         case 'z':
             return -1;
@@ -71,5 +86,5 @@ int newGame()
             break;
     }
 
-    return 1;
+    return gameRoutine(sudoku);
 }

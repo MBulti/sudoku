@@ -10,19 +10,15 @@
 #include "../include/input.h"
 #include "../include/exporter.h"
 
-#if defined(PLATFORM) && PLATFORM == 1
-    #include <windows.h>
-#endif
-
 int gameRoutine(struct s_sudoku sudoku)
 {
     int gameLoop = 1;
-    int moves = 0;
+    sudoku.moves = 0;
     int input = 0;
-    const int offset = 8;
+    const int offset = 9;
 
     int x = 16;
-    int y = 11;
+    int y = 6+offset;
 
     int row = 0;
     int line = 0;
@@ -32,7 +28,7 @@ int gameRoutine(struct s_sudoku sudoku)
     while (gameLoop)
     {
         CLS;
-        printf("Moves: %i\n", moves);
+        printf("Moves: %i\n", sudoku.moves);
 
         if(printSudoku(sudoku))
         {
@@ -77,10 +73,16 @@ int gameRoutine(struct s_sudoku sudoku)
                 input -= '0';
                 row = (x/2)-cursorBoundary[0][0]+2;
                 line = y-cursorBoundary[0][1];
-                sudoku.a_sudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] = input;
+                if(getBlockFromCursor(row,line) != -1 && getRowFromCursor(row,line) != -1 && getLineFromCursor(row,line) != -1 && sudoku.a_originalSudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] == 0)
+                {
+                    sudoku.a_sudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] = input;
+                    sudoku.moves++;
+                }
                 //printf("\n\n\n\n\n\n\n\n\n Block: %i\n Row: %i\n Line: %i", getBlockFromCursor(row,line), getRowFromCursor(row,line), getLineFromCursor(row,line));
                 //getchar();
-                moves++;
+                break;
+            case 'h':
+                //TODO: Hilfe einfügen
                 break;
             case 'e':
                 return 1;
@@ -89,6 +91,7 @@ int gameRoutine(struct s_sudoku sudoku)
                 return -1;
                 break;
             case 's':
+                //TODO: zusätzlich Originales Sudoku abspeichern (für Lösung)
                 writeSudokuToFile(sudoku);
                 return 1;
                 break;

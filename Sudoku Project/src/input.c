@@ -7,12 +7,6 @@
     #include <conio.h>
 #endif
 
-void waitForUserInput()
-{
-    char wait;
-    scanf("%c", &wait);
-}
-
 char getInput(){
     char selection = '\0';
 
@@ -38,7 +32,8 @@ int getMove(){
         read(0, &move, 4);
     #else
         //https://www.c-plusplus.net/forum/39320-full
-        while(move == '\0'){
+        while(move == '\0')
+        {
             //if keyboardhit then exec
             if(kbhit())
             {

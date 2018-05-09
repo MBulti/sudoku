@@ -26,8 +26,14 @@
 //to ignore all typed in characters after the first one
 #define EOL while(getchar() != '\n');
 
+//defines colors
+#define WHITE "\x1B[37m"
+#define RED "\x1B[31m"
+
 //main game structure
 struct s_sudoku {
     int a_sudoku[9][3][3]; //Block, Row, Line
+    int a_originalSudoku[9][3][3];
     int error;
+    int moves;
 };
