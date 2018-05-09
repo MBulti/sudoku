@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #if defined(PLATFORM) && PLATFORM == 2
     #include <termios.h>
     #include "../include/linuxLoader.h"
@@ -17,6 +18,7 @@
 int main()
 {
     int navigation = -1;
+    struct s_sudoku sudoku;
 
     init();
 
@@ -33,13 +35,23 @@ int main()
             //neues Spiel
             case 2:
                 CLS;
-                navigation = newGame();
+                sudoku = newGame();
+                navigation = sudoku.navigation;
                 CLS;
                 break;
             //gewonnen
             case 3:
                 CLS;
-                printf("Spiel gewonnen!\n");
+                if(sudoku.moves == 1)
+                {
+                    printf("Spiel in %i Zug gewonnen!\n", sudoku.moves);
+                }else{
+                    printf("Spiel in %i Zügen gewonnen!\n", sudoku.moves);
+                }
+
+                printf("start: %i\n", sudoku.timeStart);
+                printf("end: %i\n", sudoku.timeEnd);
+                printf("Lösungsdauer in sec.: %.f\n", difftime(sudoku.timeStart,sudoku.timeEnd));
                 printf("Zurück zum Hauptmenü!\n");
                 navigation = -1;
                 EOL;

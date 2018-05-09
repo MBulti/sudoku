@@ -10,7 +10,7 @@
 #include "../include/input.h"
 #include "../include/exporter.h"
 
-int gameRoutine(struct s_sudoku sudoku)
+struct s_sudoku gameRoutine(struct s_sudoku sudoku)
 {
     int gameLoop = 1;
     sudoku.moves = 0;
@@ -25,6 +25,7 @@ int gameRoutine(struct s_sudoku sudoku)
 
     int cursorBoundary[2][2] = {{4,offset},{28,12+offset}};
 
+    sudoku.timeStart = time(NULL);
     while (gameLoop)
     {
         CLS;
@@ -33,7 +34,8 @@ int gameRoutine(struct s_sudoku sudoku)
         if(printSudoku(sudoku))
         {
             gameLoop = 0;
-            return 3;
+            sudoku.navigation = 3;
+            return sudoku;
         }
 
         //printf("x: %i, y: %i", (x/2)-cursorBoundary[0][0]+2, y-cursorBoundary[0][1]);
@@ -85,20 +87,25 @@ int gameRoutine(struct s_sudoku sudoku)
                 //TODO: Hilfe einfügen
                 break;
             case 'e':
-                return 1;
+                sudoku.navigation = 1;
+                return sudoku;
                 break;
             case 'm':
-                return -1;
+                sudoku.navigation = -1;
+                return sudoku;
                 break;
             case 's':
                 //TODO: zusätzlich Originales Sudoku abspeichern (für Lösung)
                 writeSudokuToFile(sudoku);
-                return 1;
+                //sudoku.navigation = 1;
+                //return sudoku;
                 break;
             default:
                 break;
         }
     }
 
-    return 3;
+    sudoku.navigation = 3;
+    sudoku.timeEnd = time(NULL);
+    return sudoku;
 }

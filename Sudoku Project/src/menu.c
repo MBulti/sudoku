@@ -30,7 +30,7 @@ int mainMenu(int status)
     return validateMenuInput(selection);
 }
 
-int newGame()
+struct s_sudoku newGame()
 {
     char selection = '\0';
     struct s_sudoku sudoku;
@@ -79,10 +79,12 @@ int newGame()
             getchar();
             break;
         case 'z':
-            return -1;
+            sudoku.navigation = -1;
+            return sudoku;
             break;
         default:
-            return 0;
+            sudoku.navigation = 0;
+            return sudoku;
             break;
     }
 

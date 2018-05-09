@@ -36,4 +36,7 @@ struct s_sudoku {
     int a_originalSudoku[9][3][3];
     int error;
     int moves;
+    int navigation;
+    int timeStart;
+    int timeEnd;
 };
