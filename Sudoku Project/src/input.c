@@ -5,32 +5,58 @@
 #include "../include/input.h"
 #if defined(PLATFORM) && PLATFORM == 1
     #include <conio.h>
+#elif defined(PLATFORM) && PLATFORM == 2
+    #include <unistd.h>
 #endif
 
 char getInput(){
     char selection = '\0';
 
-    #if defined(PLATFORM) && PLATFORM == 2
-        fflush(stdout);
-        read(0, &selection, 4);
-    #else
+    #if defined(PLATFORM) && PLATFORM == 1
         //https://www.c-plusplus.net/forum/39320-full
         while(selection == '\0'){
             if(kbhit()){
                 selection = getch();
             }
         }
+    #elif defined(PLATFORM) && PLATFORM == 2
+        fflush(stdout);
+        read(0, &selection, 4);
     #endif
     return selection;
 }
 
 int getMove(){
-    char move = '\0';
-
     #if defined(PLATFORM) && PLATFORM == 2
+        char move[4] = {'\0'}; //needs to be an array because the read method can get multiple chars back (for example keys with an escape sequence in front of like arrow keys)
         fflush(stdout);
         read(0, &move, 4);
+        //printf("\n\n\n\n\n\n\n\n\n\n\n move: %i, %i, %i, %i", move[0], move[1], move[2], move[3]);
+        //getchar();
+        if(move[0] == 27) //escape sequence as int
+        {
+            if(move[1] == 91) //always after escape sequence
+            {
+                switch(move[2])
+                {
+                    case 68: //left
+                        return -1;
+                        break;
+                    case 67: //right
+                        return 1;
+                        break;
+                    case 65: //up
+                        return 2;
+                        break;
+                    case 66: //down
+                        return -2;
+                        break;
+                }
+            }
+        }
+        return move[0];
     #else
+        char move = '\0';
         //https://www.c-plusplus.net/forum/39320-full
         while(move == '\0')
         {

@@ -34,15 +34,7 @@ struct s_sudoku newGame()
 {
     char selection = '\0';
     struct s_sudoku sudoku;
-    #if defined(PLATFORM) && PLATFORM == 1
-        //https://cboard.cprogramming.com/c-programming/88690-path-file-relative-program.html
-        char path[MAX_PATH];
-        GetCurrentDirectory(sizeof(path), path);
-    #elif defined(PLATFORM) && PLATFORM == 2
-        char path[1024];
-        getcwd(path, sizeof(path));
-    #endif
-    //printf("path: %s", path);
+    char path[getPathSize()];
 
     printf("Levelauswahl:\n");
     printf("Bitte wählen:\n");
@@ -60,22 +52,22 @@ struct s_sudoku newGame()
     switch (selection) {
         case '1':
             printf("leichtes Level ausgewählt.\n");
-            sudoku = getSudokuFromFile(strcat(path, "\\files\\relax.sudoku"));
+            getAbsoluteFilePath(path, "files", "relax.sudoku");
             break;
         case '2':
             printf("mittleres Level ausgewählt.\n");
-            sudoku = getSudokuFromFile(strcat(path, "\\files\\genius.sudoku"));
+            getAbsoluteFilePath(path, "files", "genius.sudoku");
             break;
         case '3':
             printf("schweres Level ausgewählt.\n");
-            sudoku = getSudokuFromFile(strcat(path, "\\files\\mastermind.sudoku"));
+            getAbsoluteFilePath(path, "files", "mastermind.sudoku");
             break;
         case '0':
             //return 1;
             //EASTER EGG
             CLS;
             printf("Geheimes Easter Egg gefunden!\n");
-            sudoku = getSudokuFromFile(strcat(path, "\\files\\easterEgg.sudoku"));
+            getAbsoluteFilePath(path, "files", "easterEgg.sudoku");
             getchar();
             break;
         case 'z':
@@ -87,6 +79,6 @@ struct s_sudoku newGame()
             return sudoku;
             break;
     }
-
+    sudoku = getSudokuFromFile(path);
     return gameRoutine(sudoku);
 }

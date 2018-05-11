@@ -46,13 +46,13 @@ int main()
                 {
                     printf("Spiel in %i Zug gewonnen!\n", sudoku.moves);
                 }else{
-                    printf("Spiel in %i Zügen gewonnen!\n", sudoku.moves);
+                    printf("Spiel in %i ZÃ¼gen gewonnen!\n", sudoku.moves);
                 }
 
                 printf("start: %i\n", sudoku.timeStart);
                 printf("end: %i\n", sudoku.timeEnd);
-                printf("Lösungsdauer in sec.: %.f\n", difftime(sudoku.timeStart,sudoku.timeEnd));
-                printf("Zurück zum Hauptmenü!\n");
+                printf("LÃ¶sungsdauer in sec.: %.f\n", difftime(sudoku.timeStart,sudoku.timeEnd));
+                printf("ZurÃ¼ck zum HauptmenÃ¼!\n");
                 navigation = -1;
                 EOL;
                 break;

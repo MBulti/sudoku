@@ -12,10 +12,12 @@
     #include <windows.h>
     #define CLS system("cls")
     #define wait(X) (Sleep(X*1000))
+    #define DS "\\"
 #elif defined(PLATFORM) && PLATFORM == 2
     //Linux specific commands
     #define CLS system("clear")
     #define wait(X) (sleep(X))
+    #define DS "/"
 #endif
 
 //https://en.wikipedia.org/wiki/ANSI_escape_code
