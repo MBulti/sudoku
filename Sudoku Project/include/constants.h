@@ -4,8 +4,8 @@
 //--- Windows ---//
 #define PLATFORM 1 //Windows
 
-//--- Mac/Linux --//
-//#define PLATFORM 2 //Linux/Mac
+//--- Mac --//
+//#define PLATFORM 2 //Mac
 
 #if defined(PLATFORM) && PLATFORM == 1
     //Windows specific commands

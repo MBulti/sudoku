@@ -34,6 +34,7 @@ struct s_sudoku newGame()
 {
     char selection = '\0';
     struct s_sudoku sudoku;
+    sudoku.error = 0;
     char path[getPathSize()];
 
     printf("Levelauswahl:\n");
@@ -80,5 +81,9 @@ struct s_sudoku newGame()
             break;
     }
     sudoku = getSudokuFromFile(path);
+    if(sudoku.error)
+    {
+        return sudoku;
+    }
     return gameRoutine(sudoku);
 }

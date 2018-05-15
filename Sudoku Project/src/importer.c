@@ -13,6 +13,7 @@ struct s_sudoku getSudokuFromFile(char filename[]){
     FILE *fp;
     char str[MAXCHARACTERS];
     struct s_sudoku sudoku;
+    sudoku.error = 0;
     int i, j = 0;
 
     fp = fopen(filename, "r");

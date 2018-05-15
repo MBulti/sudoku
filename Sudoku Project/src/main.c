@@ -18,7 +18,7 @@
 int main()
 {
     int navigation = -1;
-    struct s_sudoku sudoku;
+    struct s_sudoku sudoku = {0};
 
     init();
 
@@ -37,6 +37,12 @@ int main()
                 CLS;
                 sudoku = newGame();
                 navigation = sudoku.navigation;
+                if(sudoku.error != 0)
+                {
+                    CLS;
+                    printf("Unbekannter Fehler aufgetreten\nCode: %i",sudoku.error);
+                    return 1;
+                }
                 CLS;
                 break;
             //gewonnen
