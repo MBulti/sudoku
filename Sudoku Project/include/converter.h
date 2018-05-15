@@ -6,3 +6,5 @@ int getBlockFromLineAndRow(int row, int line);
 int getBlockFromCursor(int row, int line);
 int getRowFromCursor(int row, int line);
 int getLineFromCursor(int row, int line);
+int getBlockLineFromBlock(int i);
+int getBlockRowFromBlock(int i);

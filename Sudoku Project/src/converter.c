@@ -25,6 +25,18 @@ int getBlockRowFromRow(int i)
     return a_ConvertRowNumberToRow[i];
 }
 
+int getBlockLineFromBlock(int i)
+{
+    int a_ConvertBlockToBlockLine[9] = {0, 0, 0, 3, 3, 3, 6, 6, 6};
+    return a_ConvertBlockToBlockLine[i];
+}
+
+int getBlockRowFromBlock(int i)
+{
+    int a_ConvertBlockToBlockRow[9] = {0, 1, 2, 0, 1, 2, 0, 1, 2};
+    return a_ConvertBlockToBlockRow[i];
+}
+
 //Arraymapping (row & line -> block)
 int getBlockFromLineAndRow(int row, int line)
 {
