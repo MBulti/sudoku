@@ -16,6 +16,8 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
     int input = 0;
     const int offset = 9;
 
+    int i, j, k;
+
     int x = 16;
     int y = 6+offset;
 
@@ -25,13 +27,18 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
     int cursorBoundary[2][2] = {{4,offset},{28,12+offset}};
 
     char path[getPathSize()];
-    getAbsoluteFilePath(path, "files", "saveFile.sudoku");
 
     sudoku.timeStart = time(NULL);
     while (gameLoop)
     {
         CLS;
+        //menu strings
         printf("Moves: %i\n", sudoku.moves);
+        printf("0-9 -> Wert an Stelle eintragen\n");
+        printf("s -> Spielstand speichern und Spiel beenden\n");
+        printf("l -> Spielstand laden\n");
+        printf("m -> Hauptmenü\n");
+        printf("e -> Spiel beenden\n\n");
 
         if(printSudoku(sudoku))
         {
@@ -93,6 +100,19 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
                 break;
             case 's':
                 //TODO: zusätzlich Originales Sudoku abspeichern (für Lösung)
+                getAbsoluteFilePath(path, "files", "saveFile.sudoku");
+                writeSudokuToFile(path, sudoku);
+                getAbsoluteFilePath(path, "files", "saveOriginalState.sudoku");
+                for (i = 0; i < 9; i++)//blocks
+                {
+                    for (j = 0; j < 3; j++)//block lines
+                    {
+                        for (k = 0; k < 3; k++)//block row
+                        {
+                            sudoku.a_sudoku[i][j][k] = sudoku.a_originalSudoku[i][j][k];
+                        }
+                    }
+                }
                 writeSudokuToFile(path, sudoku);
                 sudoku.navigation = 1;
                 return sudoku;

@@ -21,6 +21,9 @@ int main()
     int navigation = -1;
     char path[getPathSize()];
     struct s_sudoku sudoku = {0};
+    struct s_sudoku originalSudoku = {0};
+
+    int i, j, k;
 
     //used to do os based configurations
     init();
@@ -63,6 +66,18 @@ int main()
                 navigation = -1; //reset to default value to check for an error if one occured
                 getAbsoluteFilePath(path, "files", "saveFile.sudoku");
                 sudoku = getSudokuFromFile(path, sudoku);
+                getAbsoluteFilePath(path, "files", "saveOriginalState.sudoku");
+                originalSudoku = getSudokuFromFile(path, originalSudoku);
+                for (i = 0; i < 9; i++)//blocks
+                {
+                    for (j = 0; j < 3; j++)//block lines
+                    {
+                        for (k = 0; k < 3; k++)//block row
+                        {
+                            sudoku.a_originalSudoku[i][j][k] = originalSudoku.a_sudoku[i][j][k];
+                        }
+                    }
+                }
                 if(sudoku.error == 0){
                     sudoku = gameRoutine(sudoku);
                     navigation = sudoku.navigation;

@@ -37,25 +37,11 @@ int printSudoku(struct s_sudoku sudoku)
     if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku) == 1)
     {
         return 1;
-    }
-    else
-    {
-        //Debug
-        //printf("%i\n", sudoku.a_sudoku[1][0][0]);
-        //printf("%c\n", a_visualSudoku[1][0][0]);
-        //getchar();
-
-        //String für die Ausgabe auf der Konsole
-        printf("0-9 -> Wert an Stelle eintragen\n");
-        printf("s -> Spielstand speichern und Spiel beenden\n");
-        printf("l -> Spielstand laden\n");
-        printf("m -> Hauptmenü\n");
-        printf("e -> Spiel beenden\n\n");
+    } else {
         printf("     a b c   d e f   g h i  \n");
         printf("   +-------+-------+-------+\n");
-
         i = 1;
-        for (k = 0; k < 9; k += 3)//blöcke
+        for (k = 0; k < 9; k += 3)//blocks
         {
             for (j = 0; j < 3; j++)//block lines
             {

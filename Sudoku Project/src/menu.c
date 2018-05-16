@@ -63,9 +63,13 @@ struct s_sudoku newGame(struct s_sudoku sudoku)
         case '0':
             //EASTER EGG
             CLS;
-            printf("Geheimes Easter Egg gefunden!\n");
+            printf("Geheimes Easter Egg gefunden!\n\n");
             getAbsoluteFilePath(path, "files", "easterEgg.sudoku");
-            getchar();
+            sudoku = getSudokuFromFile(path, sudoku);
+            printSudoku(sudoku);
+            getInput();
+            sudoku.navigation = -1;
+            return sudoku;
             break;
         case 'z':
             sudoku.navigation = -1;
