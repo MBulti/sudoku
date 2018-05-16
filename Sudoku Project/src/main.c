@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #if defined(PLATFORM) && PLATFORM == 2
     #include <termios.h>
     #include "../include/linuxLoader.h"
@@ -14,38 +13,36 @@
 #include "../include/menu.h"
 #include "../include/consolePrinter.h"
 #include "../include/validator.h"
+#include "../include/importer.h"
+#include "../include/gameplay.h"
 
 int main()
 {
     int navigation = -1;
+    char path[getPathSize()];
     struct s_sudoku sudoku = {0};
 
+    //used to do os based configurations
     init();
 
     navigation = mainMenu(navigation);
 
     while(navigation != 1){
         switch (navigation) {
-            //beenden
+            //exit game
             case 1:
                 CLS;
                 printf("Spiel beendet!\n");
                 return 0;
                 break;
-            //neues Spiel
+            //new game
             case 2:
                 CLS;
-                sudoku = newGame();
+                sudoku = newGame(sudoku);
                 navigation = sudoku.navigation;
-                if(sudoku.error != 0)
-                {
-                    CLS;
-                    printf("Unbekannter Fehler aufgetreten\nCode: %i",sudoku.error);
-                    return 1;
-                }
                 CLS;
                 break;
-            //gewonnen
+            //win game
             case 3:
                 CLS;
                 if(sudoku.moves == 1)
@@ -55,15 +52,31 @@ int main()
                     printf("Spiel in %i Zügen gewonnen!\n", sudoku.moves);
                 }
 
-                printf("start: %i\n", sudoku.timeStart);
-                printf("end: %i\n", sudoku.timeEnd);
-                printf("Lösungsdauer in sec.: %.f\n", difftime(sudoku.timeStart,sudoku.timeEnd));
+                printf("tStart = %li", sudoku.timeStart);
+                getchar();
+                printf("end: %li\n", sudoku.timeEnd);
+                printf("Lösungsdauer: %lf sec.!\n", difftime(sudoku.timeEnd, sudoku.timeStart));
                 printf("Zurück zum Hauptmenü!\n");
                 navigation = -1;
                 EOL;
                 break;
-            //Abfrage
+            //load game
+            case 4:
+                CLS;
+                getAbsoluteFilePath(path, "files", "saveFile.sudoku");
+                sudoku = getSudokuFromFile(path, sudoku);
+                sudoku = gameRoutine(sudoku);
+                navigation = sudoku.navigation;
+                CLS;
+                break;
+            //default navigation (with error handling)
             default:
+                if(sudoku.error != 0)
+                {
+                    CLS;
+                    printf("Unbekannter Fehler aufgetreten\nCode: %i",sudoku.error);
+                    return 1;
+                }
                 navigation = mainMenu(navigation);
                 break;
         }

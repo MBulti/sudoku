@@ -9,28 +9,16 @@
 #define MAXCHARACTERS 255
 
 //http://www.zentut.com/c-tutorial/c-read-text-file/
-void writeSudokuToFile(struct s_sudoku sudoku){
+void writeSudokuToFile(char filename[], struct s_sudoku sudoku){
     FILE *fp;
-    fp = fopen("files\\save.sudoku", "w");
+    fp = fopen(filename, "w");
     if(fp == NULL)
     {
-        freopen("files\\save.sudoku", "w", fp);
+        freopen(filename, "w", fp);
     }
 
     int i, j;
-    /*
-    for (i = 0; i < 9; i++)
-    {
-        arrayIndex = 0;
-        for (j = 0; j < 9; j++)
-        {
-            for (k = 0; k < 3; k++)
-            {
-                fprintf(fp, (sudoku.a_sudoku[j][k][i]) + '0');
-            }
-        }
-    }
-    */
+
     for (i = 0; i < 9; i++)
     {
         for (j = 0; j < 9; j++)

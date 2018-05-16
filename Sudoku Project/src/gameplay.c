@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include <time.h>
 #include "../include/constants.h"
 #include "../include/converter.h"
 #include "../include/gameplay.h"
@@ -25,6 +24,9 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
 
     int cursorBoundary[2][2] = {{4,offset},{28,12+offset}};
 
+    char path[getPathSize()];
+    getAbsoluteFilePath(path, "files", "saveFile.sudoku");
+
     sudoku.timeStart = time(NULL);
     while (gameLoop)
     {
@@ -35,12 +37,9 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
         {
             gameLoop = 0;
             sudoku.navigation = 3;
+            sudoku.timeEnd = time(NULL);
             return sudoku;
         }
-
-        //printf("x: %i, y: %i", (x/2)-cursorBoundary[0][0]+2, y-cursorBoundary[0][1]);
-        //printf("x: %i, y: %i", x, y);
-        //getchar();
 
         cursorGoTo(x,y);
 
@@ -80,8 +79,6 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
                     sudoku.a_sudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] = input;
                     sudoku.moves++;
                 }
-                //printf("\n\n\n\n\n\n\n\n\n Block: %i\n Row: %i\n Line: %i", getBlockFromCursor(row,line), getRowFromCursor(row,line), getLineFromCursor(row,line));
-                //getchar();
                 break;
             case 'h':
                 //TODO: Hilfe einfügen
@@ -96,16 +93,15 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
                 break;
             case 's':
                 //TODO: zusätzlich Originales Sudoku abspeichern (für Lösung)
-                writeSudokuToFile(sudoku);
-                //sudoku.navigation = 1;
-                //return sudoku;
+                writeSudokuToFile(path, sudoku);
+                sudoku.navigation = 1;
+                return sudoku;
                 break;
             default:
                 break;
         }
     }
 
-    sudoku.navigation = 3;
-    sudoku.timeEnd = time(NULL);
+    sudoku.error = 2;
     return sudoku;
 }

@@ -1,5 +1,6 @@
 //  Created by Robin Winkler on 10.04.18.
 #include <stdlib.h>
+#include <time.h>
 
 //--- Windows ---//
 #define PLATFORM 1 //Windows
@@ -39,6 +40,6 @@ struct s_sudoku {
     int error;
     int moves;
     int navigation;
-    int timeStart;
-    int timeEnd;
+    time_t timeStart;
+    time_t timeEnd;
 };

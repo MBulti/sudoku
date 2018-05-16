@@ -23,6 +23,7 @@ int mainMenu(int status)
     printf("Hauptmenü:\n");
     printf("Bitte wählen:\n");
     printf("n - neues Spiel\n");
+    printf("l - letztes Spiel laden\n");
     printf("e - Spiel beenden\n");
     printf("Eingabe: ");
     selection = getInput();
@@ -30,11 +31,9 @@ int mainMenu(int status)
     return validateMenuInput(selection);
 }
 
-struct s_sudoku newGame()
+struct s_sudoku newGame(struct s_sudoku sudoku)
 {
     char selection = '\0';
-    struct s_sudoku sudoku;
-    sudoku.error = 0;
     char path[getPathSize()];
 
     printf("Levelauswahl:\n");
@@ -47,8 +46,6 @@ struct s_sudoku newGame()
     selection = getInput();
 
     CLS;
-
-    //TODO: Errorhandling vom sudoku
 
     switch (selection) {
         case '1':
@@ -64,7 +61,6 @@ struct s_sudoku newGame()
             getAbsoluteFilePath(path, "files", "mastermind.sudoku");
             break;
         case '0':
-            //return 1;
             //EASTER EGG
             CLS;
             printf("Geheimes Easter Egg gefunden!\n");
@@ -80,8 +76,8 @@ struct s_sudoku newGame()
             return sudoku;
             break;
     }
-    sudoku = getSudokuFromFile(path);
-    if(sudoku.error)
+    sudoku = getSudokuFromFile(path, sudoku);
+    if(sudoku.error != 0)
     {
         return sudoku;
     }

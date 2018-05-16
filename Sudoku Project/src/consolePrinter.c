@@ -47,7 +47,7 @@ int printSudoku(struct s_sudoku sudoku)
 
         //String für die Ausgabe auf der Konsole
         printf("0-9 -> Wert an Stelle eintragen\n");
-        printf("s -> Spielstand speichern\n");
+        printf("s -> Spielstand speichern und Spiel beenden\n");
         printf("l -> Spielstand laden\n");
         printf("m -> Hauptmenü\n");
         printf("e -> Spiel beenden\n\n");

@@ -31,8 +31,7 @@ int getMove(){
         char move[4] = {'\0'}; //needs to be an array because the read method can get multiple chars back (for example keys with an escape sequence in front of like arrow keys)
         fflush(stdout);
         read(0, &move, 4);
-        //printf("\n\n\n\n\n\n\n\n\n\n\n move: %i, %i, %i, %i", move[0], move[1], move[2], move[3]);
-        //getchar();
+
         if(move[0] == 27) //escape sequence as int
         {
             if(move[1] == 91) //always after escape sequence
@@ -85,9 +84,6 @@ int getMove(){
                     case 80: //down
                         return -2;
                         break;
-                    /*case '0' ... '9':
-                        return move;
-                        break;*/
                     default:
                         return move;
                         break;

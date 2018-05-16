@@ -7,26 +7,32 @@
 #include "../include/consolePrinter.h"
 #include "../include/gameplay.h"
 
+/*
+ * Validates the menu inputs
+ * Param: char var - input
+ * Return: int - get passed to main.c where the function lives
+ */
 int validateMenuInput(char var)
 {
     switch (var)
     {
-    case 'n':
-        return 2;
-        break;
-
-    case 'e':
-        return 1;
-        break;
-    //Debug
-    case 'a':
-        //sudokuSolving();
-        return 1;
-        break;
-
-    default:
-        return 0;
-        break;
+        case 'l':
+            return 4;
+            break;
+        case 'n':
+            return 2;
+            break;
+        case 'e':
+            return 1;
+            break;
+        //Debug
+        //case 'a':
+        //    sudokuSolving();
+        //    return 1;
+        //    break;
+        default:
+            return 0;
+            break;
     }
     return 0;
 }
