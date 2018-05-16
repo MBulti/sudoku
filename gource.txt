@@ -1,0 +1,1 @@
+gource --title "Sudoku Project" --key --hide usernames -o - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec mpeg4 -preset ultrafast -crf 1 -threads 0 -bf 0 output.mp4
