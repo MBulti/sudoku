@@ -52,9 +52,6 @@ int main()
                     printf("Spiel in %i Zügen gewonnen!\n", sudoku.moves);
                 }
 
-                printf("tStart = %li", sudoku.timeStart);
-                getchar();
-                printf("end: %li\n", sudoku.timeEnd);
                 printf("Lösungsdauer: %lf sec.!\n", difftime(sudoku.timeEnd, sudoku.timeStart));
                 printf("Zurück zum Hauptmenü!\n");
                 navigation = -1;
@@ -63,10 +60,13 @@ int main()
             //load game
             case 4:
                 CLS;
+                navigation = -1; //reset to default value to check for an error if one occured
                 getAbsoluteFilePath(path, "files", "saveFile.sudoku");
                 sudoku = getSudokuFromFile(path, sudoku);
-                sudoku = gameRoutine(sudoku);
-                navigation = sudoku.navigation;
+                if(sudoku.error == 0){
+                    sudoku = gameRoutine(sudoku);
+                    navigation = sudoku.navigation;
+                }
                 CLS;
                 break;
             //default navigation (with error handling)
