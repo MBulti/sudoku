@@ -2,17 +2,20 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <math.h>
 #include "../include/constants.h"
 #include "../include/converter.h"
 #include "../include/importer.h"
 
-#define MAXCHARACTERS 255
+#define MAXCHARACTERS 256
 
 //http://www.zentut.com/c-tutorial/c-read-text-file/
 struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
     FILE *fp;
     char str[MAXCHARACTERS];
     int i, j = 0;
+
+    int buffer[8] = {0};
 
     fp = fopen(filename, "r");
     if (fp == NULL){
@@ -21,14 +24,39 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
     }
 
     i=0;
-    while (fgets(str, MAXCHARACTERS, fp) != NULL){
-        for(j=0; j<(strlen(str)); j++){
-            if(str[j] != '\n' && (int)str[j] != 13){
-                sudoku.a_sudoku[getBlockFromLineAndRow(i,j)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //minus 48 due to the fact that the char 0 begins in the ascii table with the value 48
-                sudoku.a_originalSudoku[getBlockFromLineAndRow(i,j)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //clone of original state to know wich values come from the user and wich not
+    while (fgets(str, MAXCHARACTERS, fp) != NULL)
+    {
+        j = 0;
+        if(str[0] == 'm' && str[1] == 'o' && str[2] == 'v' && str[3] == 'e' && str[4] == 's' && str[5] == ':')
+        {
+            while(str[j+6] != '\n' && (int)str[j+6] != 13)
+            {
+                printf("char: %c, int: %i\n", str[j+6], str[j+6]);
+                buffer[j+1] += str[j+6] - '0';
+                j++;
+                //buffer[0] is reserved for the lenght of the number
+                buffer[0] = j+1;
             }
+            for(j=buffer[0]-1;j>0;j--)
+            {
+                //manual string to int conversation
+                sudoku.moves += buffer[buffer[0]-j] * pow(10.0, j-1);
+                printf("%i mal 10 hoch %i (%i) = %i\n", buffer[buffer[0]-j], j, (int)pow(10.0, j-1), sudoku.moves);
+            }
+            printf("moves: %i", sudoku.moves);
+            getchar();
+        } else {
+            for(; j<(strlen(str)); j++)
+            {
+                if(str[j] != '\n' && (int)str[j] != 13)
+                {
+                    //copy sudoku form file
+                    sudoku.a_sudoku[getBlockFromLineAndRow(i,j)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //minus 48 due to the fact that the char 0 begins in the ascii table with the value 48
+                    sudoku.a_originalSudoku[getBlockFromLineAndRow(i,j)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //clone of original state to know wich values come from the user and wich not
+                }
+            }
+            i++;
         }
-        i++;
     }
     fclose(fp);
 

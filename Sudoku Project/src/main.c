@@ -68,6 +68,9 @@ int main()
                 sudoku = getSudokuFromFile(path, sudoku);
                 getAbsoluteFilePath(path, "files", "saveOriginalState.sudoku");
                 originalSudoku = getSudokuFromFile(path, originalSudoku);
+                if(originalSudoku.error == 0) {
+                    sudoku.error = originalSudoku.error; //set the error on original sudoku
+                }
                 for (i = 0; i < 9; i++)//blocks
                 {
                     for (j = 0; j < 3; j++)//block lines

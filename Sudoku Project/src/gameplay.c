@@ -12,7 +12,6 @@
 struct s_sudoku gameRoutine(struct s_sudoku sudoku)
 {
     int gameLoop = 1;
-    sudoku.moves = 0;
     int input = 0;
     const int offset = 9;
 
