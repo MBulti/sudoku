@@ -1,4 +1,5 @@
-//  Created by Robin Winkler on 10.04.18.
+//  Created by Team-FMR on 10.04.18.
+
 #include <stdlib.h>
 #include <time.h>
 

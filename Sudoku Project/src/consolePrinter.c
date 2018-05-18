@@ -1,4 +1,5 @@
-//  Created by Fabian Gutendorf on 10.04.18.
+//  Created by Team-FMR on 10.04.18.
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -8,8 +9,8 @@
 
 /*
 prints sudoku
-params: int array[9][3][3] - sudoku
-returns: nothing
+params: struct s_sudoku sudoku
+returns: int is correct filled
 */
 int printSudoku(struct s_sudoku sudoku)
 {

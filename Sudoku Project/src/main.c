@@ -1,4 +1,4 @@
-//  Created by Robin Winkler on 10.04.18.
+//  Created by Team-FMR on 10.04.18.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,6 +16,11 @@
 #include "../include/importer.h"
 #include "../include/gameplay.h"
 
+/*
+the magic begins here
+params: -
+returns: int prozess code
+*/
 int main()
 {
     int navigation = -1;

@@ -1,11 +1,16 @@
+//  Created by Team-FMR on 21.04.18.
 
-//  Created by Robin Winkler on 21.04.18.
 #include <stdio.h>
 #include <string.h>
 #include "../include/constants.h"
 #include "../include/converter.h"
 #include "../include/exporter.h"
 
+/*
+export sudoku to file
+params: char[] filename, struct s_sudoku sudoku
+returns: void
+*/
 //http://www.zentut.com/c-tutorial/c-read-text-file/
 void writeSudokuToFile(char filename[], struct s_sudoku sudoku){
     FILE *fp;

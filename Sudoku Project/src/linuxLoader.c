@@ -1,7 +1,13 @@
-//  Created by Robin Winkler on 18.04.18.
+//  Created by Team-FMR on 18.04.18.
+
 #include <termios.h>
 #include <stdio.h>
 
+/*
+do some magic to console for instant key press
+params: -
+returns: int error
+*/
 int init(){
     //works only on linux/mac
     //http://blog.eduardofleury.com/archives/2007/11/16

@@ -1,4 +1,5 @@
-//  Created by Robin Winkler on 21.04.18.
+//  Created by Team-FMR on 21.04.18.
+
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -7,6 +8,11 @@
 #include "../include/converter.h"
 #include "../include/importer.h"
 
+/*
+import sudoku from file
+params: char[] filename, struct s_sudoku sudoku
+returns: struct s_sudoku sudoku
+*/
 //http://www.zentut.com/c-tutorial/c-read-text-file/
 struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
     FILE *fp;
@@ -33,7 +39,7 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
                 //printf("char: %c, int: %i\n", str[j+6], str[j+6]);
                 buffer[j+1] = str[j+6] - '0';
                 j++;
-                //buffer[0] is reserved for the lenght of the number
+                //buffer[0] is reserved for the length of the number
                 buffer[0] = j+1;
             }
             for(j=buffer[0]-1;j>0;j--)
@@ -52,7 +58,7 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
                 //printf("char: %c, int: %i\n", str[j+12], str[j+12]);
                 buffer[j+1] = str[j+12] - '0';
                 j++;
-                //buffer[0] is reserved for the lenght of the number
+                //buffer[0] is reserved for the length of the number
                 buffer[0] = j;
                 //printf("buffer[%i] = %i\n", j, buffer[j]);
             }

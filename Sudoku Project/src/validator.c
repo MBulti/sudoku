@@ -1,4 +1,5 @@
-//  Created by Robin Winkler on 10.04.18.
+//  Created by Team-FMR on 10.04.18.
+
 #include <string.h>
 #include <stdio.h>
 #include "../include/constants.h"
@@ -8,9 +9,9 @@
 #include "../include/gameplay.h"
 
 /*
- * Validates the menu inputs
- * Param: char var - input
- * Return: int - get passed to main.c where the function lives
+validates the menu inputs
+params: char var - input
+return: int - get passed to main.c where the function lives
  */
 int validateMenuInput(char var)
 {
@@ -38,8 +39,8 @@ int validateMenuInput(char var)
 }
 
 /*
-Check for a valid solution by Moritz Bulthaup
-Param: int a_Sudoku - Sudoku
+check for a valid solution
+params: int a_Sudoku - Sudoku
 returns: 1 = Sudoku is solved correcetly, 0 = either a block/a row/ a line is invalid
 */
 int checkForValidSolution(int a_Sudoku[9][3][3]) //check for a correct solution
@@ -75,6 +76,11 @@ int checkForValidSolution(int a_Sudoku[9][3][3]) //check for a correct solution
     return 1;
 }
 
+/*
+check if block is valid
+params: int[9][3][3] sudoku as array, int block number
+returns: int is valid
+*/
 int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
 {
     int line = 0;
@@ -113,6 +119,11 @@ int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
     return 1;
 }
 
+/*
+check if line is valid
+params: int[9][3][3] sudoku as array, int line number
+returns: int is valid
+*/
 int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
 {
     int blockNumber = getBlockFromLine(lineNumber); //0-8
@@ -153,6 +164,11 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
     return 1;
 }
 
+/*
+check if row is valid
+params: int[9][3][3] sudoku as array, int row number
+returns: int is valid
+*/
 int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
 {
     int blockNumber = getBlockFromRow(rowNumber); //0-8
@@ -194,8 +210,8 @@ int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
 
 //sudoku --> block row line
 /*
-Backtracking function by Moritz Bulthaup
-Param: int a_Sudoku - Sudoku
+backtracking function
+params: int a_Sudoku Sudoku
 returns: 1 = everything is set and sudoku is solved, 0 = sudoku cannot be solved
 */
 int solveSudoku(int a_Sudoku[9][3][3])
@@ -232,6 +248,11 @@ int solveSudoku(int a_Sudoku[9][3][3])
     return 0;
 }
 
+/*
+checks if sudoku is filled
+params: int[9][3][3] sudoku as array, int* block, int* row, int* line
+returns: int is everything is set
+*/
 int findUnassignedField(int a_Sudoku[9][3][3], int *block, int *row, int *line)
 {
     for(*block = 0; *block < 9; (*block)++)
@@ -248,6 +269,11 @@ int findUnassignedField(int a_Sudoku[9][3][3], int *block, int *row, int *line)
     return 1; //everything is set
 }
 
+/*
+checks if number can be set
+params: int[9][3][3] sudoku as array, int block number, int row number, int line number, int number to check
+returns: int is settable
+*/
 int isNumberSafe(int a_Sudoku[9][3][3],int blockNumber, int rowNumber, int lineNumber, int numberToCheck)
 {
     if(isNumberInBlock(a_Sudoku, blockNumber, numberToCheck) == 0) //not in block
@@ -263,6 +289,11 @@ int isNumberSafe(int a_Sudoku[9][3][3],int blockNumber, int rowNumber, int lineN
     return 0; //number cannot be set
 }
 
+/*
+checks if number is set in block
+params: int[9][3][3] sudoku as array, int block number, int number to check
+returns: int is set
+*/
 int isNumberInBlock(int a_Sudoku[9][3][3], int blockNumber, int numberToCheck)
 {
     int line = 0;
@@ -278,6 +309,11 @@ int isNumberInBlock(int a_Sudoku[9][3][3], int blockNumber, int numberToCheck)
     return 0; //number is still missing -> feel free to put it here;
 }
 
+/*
+checks if a number is set in block line
+params: int[9][3][3] sudoku as array, int block number, int line number, int number to check
+returns: int is set
+*/
 int isNumberInLine(int a_Sudoku[9][3][3],int blockNumber, int lineNumber, int numberToCheck)
 {
     int blockStart = getBlockLineFromBlock(blockNumber);
@@ -295,6 +331,11 @@ int isNumberInLine(int a_Sudoku[9][3][3],int blockNumber, int lineNumber, int nu
     return 0; //number is still missing -> feel free to put it here
 }
 
+/*
+checks if a number is set in block row
+params: int[9][3][3] sudoku as array, int block number, int row number, int number to check
+returns: int is set
+*/
 int isNumberInRow(int a_Sudoku[9][3][3],int blockNumber, int rowNumber, int numberToCheck)
 {
     int blockStart = getBlockRowFromBlock(blockNumber);

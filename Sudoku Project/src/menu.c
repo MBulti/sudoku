@@ -1,4 +1,5 @@
-//  Created by Robin Winkler on 10.04.18.
+//  Created by Team-FMR on 10.04.18.
+
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -10,6 +11,11 @@
 #include "../include/importer.h"
 #include "../include/input.h"
 
+/*
+show main menu
+params: int previous status
+returns: int validated input
+*/
 int mainMenu(int status)
 {
     char selection = '\0';
@@ -31,6 +37,11 @@ int mainMenu(int status)
     return validateMenuInput(selection);
 }
 
+/*
+starts new game
+params: struct s_sudoku sudoku
+returns: struct s_sudoku sudoku
+*/
 struct s_sudoku newGame(struct s_sudoku sudoku)
 {
     char selection = '\0';

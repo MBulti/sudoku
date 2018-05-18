@@ -1,4 +1,5 @@
-//  Created by Robin Winkler on 06.05.18.
+//  Created by Team-FMR on 06.05.18.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/constants.h"
@@ -9,6 +10,11 @@
     #include <unistd.h>
 #endif
 
+/*
+gets generic input instantly
+params: -
+returns: char key pressed
+*/
 char getInput(){
     char selection = '\0';
 
@@ -26,6 +32,11 @@ char getInput(){
     return selection;
 }
 
+/*
+gets arrow key presses
+params: -
+returns: int direction pressed
+*/
 int getMove(){
     #if defined(PLATFORM) && PLATFORM == 2
         char move[4] = {'\0'}; //needs to be an array because the read method can get multiple chars back (for example keys with an escape sequence in front of like arrow keys)
