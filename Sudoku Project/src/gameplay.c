@@ -98,7 +98,7 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
                 return sudoku;
                 break;
             case 's':
-                //TODO: zusätzlich Originales Sudoku abspeichern (für Lösung)
+                sudoku.timeEnd = time(NULL);
                 getAbsoluteFilePath(path, "files", "saveFile.sudoku");
                 writeSudokuToFile(path, sudoku);
                 getAbsoluteFilePath(path, "files", "saveOriginalState.sudoku");

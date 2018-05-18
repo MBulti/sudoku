@@ -33,6 +33,8 @@
 #define WHITE "\x1B[37m"
 #define RED "\x1B[31m"
 
+#define MAXCHARACTERS 256
+
 //main game structure
 struct s_sudoku {
     int a_sudoku[9][3][3]; //Block, Row, Line
@@ -40,6 +42,7 @@ struct s_sudoku {
     int error;
     int moves;
     int navigation;
+    double timeElapsed;
     time_t timeStart;
     time_t timeEnd;
 };

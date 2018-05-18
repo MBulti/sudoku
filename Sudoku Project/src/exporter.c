@@ -6,8 +6,6 @@
 #include "../include/converter.h"
 #include "../include/exporter.h"
 
-#define MAXCHARACTERS 255
-
 //http://www.zentut.com/c-tutorial/c-read-text-file/
 void writeSudokuToFile(char filename[], struct s_sudoku sudoku){
     FILE *fp;
@@ -19,6 +17,9 @@ void writeSudokuToFile(char filename[], struct s_sudoku sudoku){
 
     fprintf(fp, "%s", "moves:");
     fprintf(fp, "%i\n", sudoku.moves);
+
+    fprintf(fp, "%s", "timeElapsed:");
+    fprintf(fp, "%i\n", (int)difftime(sudoku.timeEnd, sudoku.timeStart));
 
     int i, j;
 

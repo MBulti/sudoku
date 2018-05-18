@@ -55,7 +55,7 @@ int main()
                     printf("Spiel in %i Zügen gewonnen!\n", sudoku.moves);
                 }
 
-                printf("Lösungsdauer: %lf sec.!\n", difftime(sudoku.timeEnd, sudoku.timeStart));
+                printf("Lösungsdauer: %i sec.!\n", (int)(difftime(sudoku.timeEnd, sudoku.timeStart)+sudoku.timeElapsed));
                 printf("Zurück zum Hauptmenü!\n");
                 navigation = -1;
                 EOL;
