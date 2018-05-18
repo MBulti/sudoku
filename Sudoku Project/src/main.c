@@ -62,6 +62,8 @@ int main()
 
                 printf("Lösungsdauer: %i sec.!\n", (int)(difftime(sudoku.timeEnd, sudoku.timeStart)+sudoku.timeElapsed));
                 printf("Zurück zum Hauptmenü!\n");
+                sudoku.moves = 0;
+                sudoku.timeElapsed = 0.0;
                 navigation = -1;
                 EOL;
                 break;
