@@ -17,6 +17,9 @@ void writeSudokuToFile(char filename[], struct s_sudoku sudoku){
         freopen(filename, "w", fp);
     }
 
+    fprintf(fp, "%s", "moves:");
+    fprintf(fp, "%i\n", sudoku.moves);
+
     int i, j;
 
     for (i = 0; i < 9; i++)
