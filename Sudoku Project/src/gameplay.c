@@ -58,72 +58,73 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
         input = getMove();
         switch(input)
         {
-            case -1: //left
-                if(x > cursorBoundary[0][0])
+        case -1: //left
+            if(x > cursorBoundary[0][0])
+            {
+                x-=2;
+            }
+            break;
+        case 1: //right
+            if(x < cursorBoundary[1][0])
+            {
+                x+=2;
+            }
+            break;
+        case 2: //up
+            if(y > cursorBoundary[0][1])
+            {
+                y--;
+            }
+            break;
+        case -2: //down
+            if(y < cursorBoundary[1][1])
+            {
+                y++;
+            }
+            break;
+        case '0' ... '9':
+            input -= '0';
+            row = (x/2)-cursorBoundary[0][0]+2;
+            line = y-cursorBoundary[0][1];
+            if(getBlockFromCursor(row,line) != -1 && getRowFromCursor(row,line) != -1 && getLineFromCursor(row,line) != -1 && sudoku.a_originalSudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] == 0)
+            {
+                sudoku.a_sudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] = input;
+                sudoku.moves++;
+            }
+            break;
+        case 'h':
+            solveSudoku(sudoku.a_sudoku);
+            //TODO: Hilfe einfügen
+            break;
+        case 'e':
+            sudoku.navigation = 1;
+            return sudoku;
+            break;
+        case 'm':
+            sudoku.navigation = -1;
+            return sudoku;
+            break;
+        case 's':
+            sudoku.timeEnd = time(NULL);
+            getAbsoluteFilePath(path, "files", "saveFile.sudoku");
+            writeSudokuToFile(path, sudoku);
+            getAbsoluteFilePath(path, "files", "saveOriginalState.sudoku");
+            for (i = 0; i < 9; i++)//blocks
+            {
+                for (j = 0; j < 3; j++)//block lines
                 {
-                     x-=2;
-                }
-                break;
-            case 1: //right
-                if(x < cursorBoundary[1][0])
-                {
-                     x+=2;
-                }
-                break;
-            case 2: //up
-                if(y > cursorBoundary[0][1])
-                {
-                     y--;
-                }
-                break;
-            case -2: //down
-                if(y < cursorBoundary[1][1])
-                {
-                     y++;
-                }
-                break;
-            case '0' ... '9':
-                input -= '0';
-                row = (x/2)-cursorBoundary[0][0]+2;
-                line = y-cursorBoundary[0][1];
-                if(getBlockFromCursor(row,line) != -1 && getRowFromCursor(row,line) != -1 && getLineFromCursor(row,line) != -1 && sudoku.a_originalSudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] == 0)
-                {
-                    sudoku.a_sudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] = input;
-                    sudoku.moves++;
-                }
-                break;
-            case 'h':
-                //TODO: Hilfe einfügen
-                break;
-            case 'e':
-                sudoku.navigation = 1;
-                return sudoku;
-                break;
-            case 'm':
-                sudoku.navigation = -1;
-                return sudoku;
-                break;
-            case 's':
-                sudoku.timeEnd = time(NULL);
-                getAbsoluteFilePath(path, "files", "saveFile.sudoku");
-                writeSudokuToFile(path, sudoku);
-                getAbsoluteFilePath(path, "files", "saveOriginalState.sudoku");
-                for (i = 0; i < 9; i++)//blocks
-                {
-                    for (j = 0; j < 3; j++)//block lines
+                    for (k = 0; k < 3; k++)//block row
                     {
-                        for (k = 0; k < 3; k++)//block row
-                        {
-                            sudoku.a_sudoku[i][j][k] = sudoku.a_originalSudoku[i][j][k];
-                        }
+                        sudoku.a_sudoku[i][j][k] = sudoku.a_originalSudoku[i][j][k];
                     }
                 }
-                writeSudokuToFile(path, sudoku);
-                sudoku.navigation = 1;
-                return sudoku;
-                break;
-            default:
-                break;
+            }
+            writeSudokuToFile(path, sudoku);
+            sudoku.navigation = 1;
+            return sudoku;
+            break;
+        default:
+            break;
         }
     }
 

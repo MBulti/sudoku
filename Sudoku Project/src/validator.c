@@ -17,30 +17,30 @@ int validateMenuInput(char var)
 {
     switch (var)
     {
-        case 'l':
-            return 4;
-            break;
-        case 'n':
-            return 2;
-            break;
-        case 'e':
-            return 1;
-            break;
-        //Debug
-        //case 'a':
-        //    sudokuSolving();
-        //    return 1;
-        //    break;
-        default:
-            return 0;
-            break;
+    case 'l':
+        return 4;
+        break;
+    case 'n':
+        return 2;
+        break;
+    case 'e':
+        return 1;
+        break;
+    //Debug
+    //case 'a':
+    //    sudokuSolving();
+    //    return 1;
+    //    break;
+    default:
+        return 0;
+        break;
     }
     return 0;
 }
 
 /*
 check for a valid solution
-params: int a_Sudoku - Sudoku
+params: int[9][3][3] sudoku as array
 returns: 1 = Sudoku is solved correcetly, 0 = either a block/a row/ a line is invalid
 */
 int checkForValidSolution(int a_Sudoku[9][3][3]) //check for a correct solution
@@ -211,7 +211,7 @@ int isRowValid(int a_Sudoku[9][3][3], int rowNumber)
 //sudoku --> block row line
 /*
 backtracking function
-params: int a_Sudoku Sudoku
+params: int[9][3][3] sudoku as array
 returns: 1 = everything is set and sudoku is solved, 0 = sudoku cannot be solved
 */
 int solveSudoku(int a_Sudoku[9][3][3])

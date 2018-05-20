@@ -12,7 +12,8 @@ params: char[] filename, struct s_sudoku sudoku
 returns: void
 */
 //http://www.zentut.com/c-tutorial/c-read-text-file/
-void writeSudokuToFile(char filename[], struct s_sudoku sudoku){
+void writeSudokuToFile(char filename[], struct s_sudoku sudoku)
+{
     FILE *fp;
     fp = fopen(filename, "w");
     if(fp == NULL)

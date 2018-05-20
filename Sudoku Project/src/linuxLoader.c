@@ -8,13 +8,15 @@ do some magic to console for instant key press
 params: -
 returns: int error
 */
-int init(){
+int init()
+{
     //works only on linux/mac
     //http://blog.eduardofleury.com/archives/2007/11/16
     struct termios tios, orig_tios;    /* terminal settings */
 
     /* Get current terminal settings */
-    if (tcgetattr(0, &orig_tios)){
+    if (tcgetattr(0, &orig_tios))
+    {
         printf("Error getting current terminal settings\n");
         return 3;
     }
@@ -29,19 +31,22 @@ int init(){
     tios.c_lflag |= ECHO;
 
     /* Apply our settings */
-    if (tcsetattr(0, TCSANOW, &tios)){
+    if (tcsetattr(0, TCSANOW, &tios))
+    {
         printf("Error applying terminal settings\n");
         return 3;
     }
 
     /* Check whether our settings were correctly applied */
-    if (tcgetattr(0, &tios)){
+    if (tcgetattr(0, &tios))
+    {
         tcsetattr(0, TCSANOW, &orig_tios);
         printf("Error while asserting terminal settings\n");
         return 3;
     }
 
-    if ((tios.c_lflag & ICANON) || !(tios.c_lflag & ECHO)) {
+    if ((tios.c_lflag & ICANON) || !(tios.c_lflag & ECHO))
+    {
         tcsetattr(0, TCSANOW, &orig_tios);
         printf("Could not apply all terminal settings\n");
         return 3;

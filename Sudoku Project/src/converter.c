@@ -77,7 +77,8 @@ returns: int block number
 int getBlockFromLineAndRow(int row, int line)
 {
     //Arraymapping (row & line -> block)
-    int a_getBlock[9][9] = {
+    int a_getBlock[9][9] =
+    {
         {0,0,0,1,1,1,2,2,2},
         {0,0,0,1,1,1,2,2,2},
         {0,0,0,1,1,1,2,2,2},
@@ -98,7 +99,8 @@ returns: int block number
 */
 int getBlockFromCursor(int row, int line)
 {
-    int a_getBlock[13][13] = {
+    int a_getBlock[13][13] =
+    {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,0,0,0,-1,1,1,1,-1,2,2,2,-1},
         {-1,0,0,0,-1,1,1,1,-1,2,2,2,-1},
@@ -124,7 +126,8 @@ returns: int block row number
 */
 int getRowFromCursor(int row, int line)
 {
-    int a_getBlock[13][13] = {
+    int a_getBlock[13][13] =
+    {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,0,0,0,-1,0,0,0,-1,0,0,0,-1},
         {-1,1,1,1,-1,1,1,1,-1,1,1,1,-1},
@@ -150,7 +153,8 @@ returns: int block line number
 */
 int getLineFromCursor(int row, int line)
 {
-    int a_getBlock[13][13] = {
+    int a_getBlock[13][13] =
+    {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,0,1,2,-1,0,1,2,-1,0,1,2,-1},
         {-1,0,1,2,-1,0,1,2,-1,0,1,2,-1},

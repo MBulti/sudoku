@@ -22,7 +22,8 @@ int mainMenu(int status)
 
     CLS;
 
-    if (status == 0) {
+    if (status == 0)
+    {
         printf("Falsche Eingabe entdeckt!\n");
     }
 
@@ -58,38 +59,39 @@ struct s_sudoku newGame(struct s_sudoku sudoku)
 
     CLS;
 
-    switch (selection) {
-        case '1':
-            printf("leichtes Level ausgewählt.\n");
-            getAbsoluteFilePath(path, "files", "relax.sudoku");
-            break;
-        case '2':
-            printf("mittleres Level ausgewählt.\n");
-            getAbsoluteFilePath(path, "files", "genius.sudoku");
-            break;
-        case '3':
-            printf("schweres Level ausgewählt.\n");
-            getAbsoluteFilePath(path, "files", "mastermind.sudoku");
-            break;
-        case '0':
-            //EASTER EGG
-            CLS;
-            printf("Geheimes Easter Egg gefunden!\n\n");
-            getAbsoluteFilePath(path, "files", "easterEgg.sudoku");
-            sudoku = getSudokuFromFile(path, sudoku);
-            printSudoku(sudoku);
-            getInput();
-            sudoku.navigation = -1;
-            return sudoku;
-            break;
-        case 'z':
-            sudoku.navigation = -1;
-            return sudoku;
-            break;
-        default:
-            sudoku.navigation = 0;
-            return sudoku;
-            break;
+    switch (selection)
+    {
+    case '1':
+        printf("leichtes Level ausgewählt.\n");
+        getAbsoluteFilePath(path, "files", "relax.sudoku");
+        break;
+    case '2':
+        printf("mittleres Level ausgewählt.\n");
+        getAbsoluteFilePath(path, "files", "genius.sudoku");
+        break;
+    case '3':
+        printf("schweres Level ausgewählt.\n");
+        getAbsoluteFilePath(path, "files", "mastermind.sudoku");
+        break;
+    case '0':
+        //EASTER EGG
+        CLS;
+        printf("Geheimes Easter Egg gefunden!\n\n");
+        getAbsoluteFilePath(path, "files", "easterEgg.sudoku");
+        sudoku = getSudokuFromFile(path, sudoku);
+        printSudoku(sudoku);
+        getInput();
+        sudoku.navigation = -1;
+        return sudoku;
+        break;
+    case 'z':
+        sudoku.navigation = -1;
+        return sudoku;
+        break;
+    default:
+        sudoku.navigation = 0;
+        return sudoku;
+        break;
     }
     sudoku = getSudokuFromFile(path, sudoku);
     if(sudoku.error != 0)

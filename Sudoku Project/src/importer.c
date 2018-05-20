@@ -14,7 +14,8 @@ params: char[] filename, struct s_sudoku sudoku
 returns: struct s_sudoku sudoku
 */
 //http://www.zentut.com/c-tutorial/c-read-text-file/
-struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
+struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku)
+{
     FILE *fp;
     char str[MAXCHARACTERS];
     int i, j = 0;
@@ -22,7 +23,8 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
     int buffer[8] = {0};
 
     fp = fopen(filename, "r");
-    if (fp == NULL){
+    if (fp == NULL)
+    {
         sudoku.error = 1;
         return sudoku;
     }
@@ -42,7 +44,7 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
                 //buffer[0] is reserved for the length of the number
                 buffer[0] = j+1;
             }
-            for(j=buffer[0]-1;j>0;j--)
+            for(j=buffer[0]-1; j>0; j--)
             {
                 //manual string to int conversation
                 sudoku.moves += buffer[buffer[0]-j] * pow(10.0, j-1);
@@ -50,7 +52,8 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
             }
             //printf("moves: %i", sudoku.moves);
             //getchar();
-        } else if(str[0] == 't' && str[1] == 'i' && str[2] == 'm' && str[3] == 'e' && str[4] == 'E' && str[5] == 'l' && str[6] == 'a' && str[7] == 'p' && str[8] == 's' && str[9] == 'e' && str[10] == 'd' && str[11] == ':')
+        }
+        else if(str[0] == 't' && str[1] == 'i' && str[2] == 'm' && str[3] == 'e' && str[4] == 'E' && str[5] == 'l' && str[6] == 'a' && str[7] == 'p' && str[8] == 's' && str[9] == 'e' && str[10] == 'd' && str[11] == ':')
         {
             while(str[j+12] != '\n' && (int)str[j+12] != 13)
             {
@@ -62,7 +65,7 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
                 buffer[0] = j;
                 //printf("buffer[%i] = %i\n", j, buffer[j]);
             }
-            for(j=buffer[0];j>0;j--)
+            for(j=buffer[0]; j>0; j--)
             {
                 //printf("buffer[%i] = %i\n", buffer[0]+1-j, buffer[buffer[0]+1-j]);
                 //manual string to int conversation
@@ -71,7 +74,9 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku){
             }
             //printf("timeElapsed: %lf", sudoku.timeElapsed);
             //getchar();
-        } else {
+        }
+        else
+        {
             for(; j<(strlen(str)); j++)
             {
                 if(str[j] != '\n' && (int)str[j] != 13)

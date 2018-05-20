@@ -28,7 +28,9 @@ int printSudoku(struct s_sudoku sudoku)
                 {
                     a_visualSudoku[k][i][j] = '.';
                     fullyFilled = 0;
-                }else{
+                }
+                else
+                {
                     a_visualSudoku[k][i][j] = sudoku.a_sudoku[k][i][j] + '0';
                 }
             }
@@ -38,7 +40,9 @@ int printSudoku(struct s_sudoku sudoku)
     if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku) == 1)
     {
         return 1;
-    } else {
+    }
+    else
+    {
         printf("     a b c   d e f   g h i  \n");
         printf("   +-------+-------+-------+\n");
         i = 1;
@@ -53,32 +57,32 @@ int printSudoku(struct s_sudoku sudoku)
                     if(sudoku.a_originalSudoku[k+l][0][j])
                     {
                         printf(RED);
-                    }else{
+                    }
+                    else
+                    {
                         printf(WHITE);
                     }
                     printf("%c ", a_visualSudoku[k+l][0][j]);
                     if(sudoku.a_originalSudoku[k+l][1][j])
                     {
                         printf(RED);
-                    }else{
+                    }
+                    else
+                    {
                         printf(WHITE);
                     }
                     printf("%c ", a_visualSudoku[k+l][1][j]);
                     if(sudoku.a_originalSudoku[k+l][2][j])
                     {
                         printf(RED);
-                    }else{
+                    }
+                    else
+                    {
                         printf(WHITE);
                     }
                     printf("%c ", a_visualSudoku[k+l][2][j]);
                     printf(WHITE);
                 }
-                //printf("a_visualSudoku[%i][%i][%i] = %c", k+1, 2, j, a_visualSudoku[k+1][2][j]);
-                //getchar();
-                /*printf("%i  | %c %c %c | %c %c %c | %c %c %c |\n", i,
-                       a_visualSudoku[k][0][j], a_visualSudoku[k][1][j], a_visualSudoku[k][2][j],
-                       a_visualSudoku[k+1][0][j], a_visualSudoku[k+1][1][j], a_visualSudoku[k+1][2][j],
-                       a_visualSudoku[k+2][0][j], a_visualSudoku[k+2][1][j], a_visualSudoku[k+2][2][j]);*/
                 printf("|\n");
                 i++;
             }
