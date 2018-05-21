@@ -9,6 +9,7 @@
 #include "../include/consolePrinter.h"
 #include "../include/input.h"
 #include "../include/exporter.h"
+#include "../include/validator.h"
 
 /*
 game rountine
@@ -41,7 +42,7 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
         printf("Moves: %i\n", sudoku.moves);
         printf("0-9 -> Wert an Stelle eintragen\n");
         printf("s -> Spielstand speichern und Spiel beenden\n");
-        printf("l -> Spielstand laden\n");
+        printf("h -> Lösungshinweis einblenden\n");
         printf("m -> Hauptmenü\n");
         printf("e -> Spiel beenden\n\n");
 
