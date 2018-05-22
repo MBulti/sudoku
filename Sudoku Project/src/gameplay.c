@@ -42,8 +42,8 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
         printf("Moves: %i\n", sudoku.moves);
         printf("0-9 -> Wert an Stelle eintragen\n");
         printf("s -> Spielstand speichern und Spiel beenden\n");
-        printf("h -> Lösungshinweis einblenden\n");
-        printf("m -> Hauptmenü\n");
+        printf("h -> Loesungshinweis einblenden\n");
+        printf("m -> Hauptmenue\n");
         printf("e -> Spiel beenden\n\n");
 
         if(printSudoku(sudoku))

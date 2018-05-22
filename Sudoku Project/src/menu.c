@@ -27,8 +27,8 @@ int mainMenu(int status)
         printf("Falsche Eingabe entdeckt!\n");
     }
 
-    printf("Hauptmenü:\n");
-    printf("Bitte wählen:\n");
+    printf("Hauptmenue:\n");
+    printf("Bitte waehlen:\n");
     printf("n - neues Spiel\n");
     printf("l - letztes Spiel laden\n");
     printf("e - Spiel beenden\n");
@@ -49,11 +49,11 @@ struct s_sudoku newGame(struct s_sudoku sudoku)
     char path[getPathSize()];
 
     printf("Levelauswahl:\n");
-    printf("Bitte wählen:\n");
+    printf("Bitte waehlen:\n");
     printf("1 - leichtes Level spielen\n");
     printf("2 - mittleres Level spielen\n");
     printf("3 - schweres Level spielen\n");
-    printf("z - Zurück zum Hauptmenü\n");
+    printf("z - Zurueck zum Hauptmenue\n");
     printf("Eingabe: ");
     selection = getInput();
 
@@ -62,15 +62,15 @@ struct s_sudoku newGame(struct s_sudoku sudoku)
     switch (selection)
     {
     case '1':
-        printf("leichtes Level ausgewählt.\n");
+        printf("leichtes Level ausgewaehlt.\n");
         getAbsoluteFilePath(path, "files", "relax.sudoku");
         break;
     case '2':
-        printf("mittleres Level ausgewählt.\n");
+        printf("mittleres Level ausgewaehlt.\n");
         getAbsoluteFilePath(path, "files", "genius.sudoku");
         break;
     case '3':
-        printf("schweres Level ausgewählt.\n");
+        printf("schweres Level ausgewaehlt.\n");
         getAbsoluteFilePath(path, "files", "mastermind.sudoku");
         break;
     case '0':
