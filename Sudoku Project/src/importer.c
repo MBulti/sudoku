@@ -84,6 +84,7 @@ struct s_sudoku getSudokuFromFile(char filename[], struct s_sudoku sudoku)
                     //copy sudoku form file
                     sudoku.a_sudoku[getBlockFromLineAndRow(i,j)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //minus 48 due to the fact that the char 0 begins in the ascii table with the value 48
                     sudoku.a_originalSudoku[getBlockFromLineAndRow(i,j)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //clone of original state to know wich values come from the user and wich not
+                    sudoku.a_validSudoku[getBlockFromLineAndRow(i,j)][getBlockLineFromLine(j)][getBlockRowFromRow(i)] = (int)str[j] - '0'; //clone of original state to get a valid solution
                 }
             }
             i++;

@@ -25,7 +25,7 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
     int i, j, k;
 
     int x = 16;
-    int y = 6+offset;
+    int y = 5+offset;
 
     int row = 0;
     int line = 0;
@@ -42,8 +42,8 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
         printf("Moves: %i\n", sudoku.moves);
         printf("0-9 -> Wert an Stelle eintragen\n");
         printf("s -> Spielstand speichern und Spiel beenden\n");
-        printf("h -> Lösungshinweis einblenden\n");
-        printf("m -> Hauptmenü\n");
+        printf("h -> Loesungshinweis einblenden\n");
+        printf("m -> Hauptmenue\n");
         printf("e -> Spiel beenden\n\n");
 
         if(printSudoku(sudoku))
@@ -94,8 +94,19 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
             }
             break;
         case 'h':
-            solveSudoku(sudoku.a_sudoku);
-            //TODO: Hilfe einfügen
+            row = (x/2)-cursorBoundary[0][0]+2;
+            line = y-cursorBoundary[0][1];
+
+            solveSudoku(sudoku.a_validSudoku);
+            if(getBlockFromCursor(row,line) != -1 && getRowFromCursor(row,line) != -1 && getLineFromCursor(row,line) != -1 && sudoku.a_originalSudoku[getBlockFromCursor(row,line)][getRowFromCursor(row,line)][getLineFromCursor(row,line)] == 0)
+            {
+                int blockFromCurser = getBlockFromCursor(row, line);
+                int rowFromCurser = getRowFromCursor(row,line);
+                int lineFromCurser = getLineFromCursor(row, line);
+
+                sudoku.a_sudoku[blockFromCurser][rowFromCurser][lineFromCurser] = sudoku.a_validSudoku[blockFromCurser][rowFromCurser][lineFromCurser];
+                sudoku.moves++;
+            }
             break;
         case 'e':
             sudoku.navigation = 1;
