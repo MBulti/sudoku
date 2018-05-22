@@ -53,7 +53,8 @@ struct s_sudoku newGame(struct s_sudoku sudoku)
     printf("1 - leichtes Level spielen\n");
     printf("2 - mittleres Level spielen\n");
     printf("3 - schweres Level spielen\n");
-    printf("z - Zur\x81ck zum Hauptmen\x81\n");
+    printf("z - Zur\x81");
+    printf("ck zum Hauptmen\x81\n");
     printf("Eingabe: ");
     selection = getInput();
 

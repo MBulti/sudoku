@@ -67,7 +67,8 @@ int main()
             }
 
             printf("L\x94sungsdauer: %i sec.!\n", (int)(difftime(sudoku.timeEnd, sudoku.timeStart)+sudoku.timeElapsed));
-            printf("Zur\x81ck zum Hauptmen\x81!\n");
+            printf("Zur\x81");
+            printf("ck zum Hauptmen\x81!\n");
             sudoku.moves = 0;
             sudoku.timeElapsed = 0.0;
             navigation = -1;
