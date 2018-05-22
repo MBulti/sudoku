@@ -4,10 +4,10 @@
 #include <time.h>
 
 //--- Windows ---//
-#define PLATFORM 1 //Windows
+//#define PLATFORM 1 //Windows
 
 //--- Mac --//
-//#define PLATFORM 2 //Mac
+#define PLATFORM 2 //Mac
 
 #if defined(PLATFORM) && PLATFORM == 1
     //Windows specific commands

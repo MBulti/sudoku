@@ -1,6 +1,8 @@
 //  Created by Team-FMR on 16.05.18.
 
 #include "../include/constants.h"
+#include <unistd.h>
+#include <string.h>
 
 /*
 gets absolute path from project dir + subdir + filename
