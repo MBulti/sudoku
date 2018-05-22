@@ -15,11 +15,12 @@
 #include "../include/validator.h"
 #include "../include/importer.h"
 #include "../include/gameplay.h"
+#include "../include/generator.h"
 
 /*
-the magic begins here
+the start of the program
 params: -
-returns: int prozess code
+returns: int process code
 */
 int main()
 {
@@ -33,8 +34,10 @@ int main()
     //used to do os based configurations
     init();
 
+    //Initialize Main Menu
     navigation = mainMenu(navigation);
 
+    //Process the input in the menu
     while(navigation != 1)
     {
         switch (navigation)
@@ -61,11 +64,11 @@ int main()
             }
             else
             {
-                printf("Spiel in %i Zuegen gewonnen!\n", sudoku.moves);
+                printf("Spiel in %i Z\x81gen gewonnen!\n", sudoku.moves);
             }
 
-            printf("Loesungsdauer: %i sec.!\n", (int)(difftime(sudoku.timeEnd, sudoku.timeStart)+sudoku.timeElapsed));
-            printf("Zurueck zum Hauptmenue!\n");
+            printf("L\x94sungsdauer: %i sec.!\n", (int)(difftime(sudoku.timeEnd, sudoku.timeStart)+sudoku.timeElapsed));
+            printf("Zur\x81ck zum Hauptmen\x81!\n");
             sudoku.moves = 0;
             sudoku.timeElapsed = 0.0;
             navigation = -1;

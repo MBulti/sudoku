@@ -14,10 +14,11 @@ returns: int is correct filled
 */
 int printSudoku(struct s_sudoku sudoku)
 {
-    char a_visualSudoku[9][3][3];
+    char a_visualSudoku[9][3][3]; //The char sudoku that is printed on the console
     int i, j, k, l;
-    int fullyFilled = 1;
+    int fullyFilled = 1; //Is = 0 if there is at least one 0 in the sudoku (empty field)
 
+    //Parse the sudoku array and convert every integer of the parameter sudoku into a char
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 3; j++)
@@ -37,10 +38,13 @@ int printSudoku(struct s_sudoku sudoku)
         }
     }
 
+    //is the sudoku completely solved?
     if(fullyFilled == 1 && checkForValidSolution(sudoku.a_sudoku) == 1)
     {
         return 1;
     }
+
+    //if not, then print the current sudoku field with red colors for the non-editable digits and white for the editable digits or the field
     else
     {
         printf("     a b c   d e f   g h i  \n");
@@ -54,7 +58,7 @@ int printSudoku(struct s_sudoku sudoku)
                 for (l = 0; l < 3; l++)//block row
                 {
                     printf("| ");
-                    if(sudoku.a_originalSudoku[k+l][0][j])
+                    if(sudoku.a_originalSudoku[k+l][0][j]) //If there is an entry in the original sudoku array the printed digit will be red, else white
                     {
                         printf(RED);
                     }

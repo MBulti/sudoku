@@ -26,11 +26,6 @@ int validateMenuInput(char var)
     case 'e':
         return 1;
         break;
-    //Debug
-    //case 'a':
-    //    sudokuSolving();
-    //    return 1;
-    //    break;
     default:
         return 0;
         break;
@@ -89,7 +84,7 @@ int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
     int a_assistArray[9] = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
     for(line = 0; line < 3; line++)
     {
-        for(row = 0; row < 3; row++)
+        for(row = 0; row < 3; row++)//read the amount of moves that were stored in the file and write is into the moves variable of the sudoku struct
         {
             for(arrayNumber = 0; arrayNumber < 9; arrayNumber++)
             {
@@ -98,7 +93,7 @@ int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
                     continue;
                 }
 
-
+//read the amount of moves that were stored in the file and write is into the moves variable of the sudoku struct
                 if(a_Sudoku[blockNumber][row][line] == a_assistArray[arrayNumber])
                 {
                     a_assistArray[arrayNumber] = 0; //remove found number
@@ -128,7 +123,7 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
 {
     int blockNumber = getBlockFromLine(lineNumber); //0-8
     int line = getBlockLineFromLine(lineNumber); //0-2
-
+//read the amount of moves that were stored in the file and write is into the moves variable of the sudoku struct
     int block;
     int row;
     int arrayNumber = 0;

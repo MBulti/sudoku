@@ -10,6 +10,7 @@
 #include "../include/validator.h"
 #include "../include/importer.h"
 #include "../include/input.h"
+#include "../include/generator.h"
 
 /*
 show main menu
@@ -27,8 +28,8 @@ int mainMenu(int status)
         printf("Falsche Eingabe entdeckt!\n");
     }
 
-    printf("Hauptmenue:\n");
-    printf("Bitte waehlen:\n");
+    printf("Hauptmen\x81:\n");
+    printf("Bitte w\x84hlen:\n");
     printf("n - neues Spiel\n");
     printf("l - letztes Spiel laden\n");
     printf("e - Spiel beenden\n");
@@ -49,32 +50,33 @@ struct s_sudoku newGame(struct s_sudoku sudoku)
     char path[getPathSize()];
 
     printf("Levelauswahl:\n");
-    printf("Bitte waehlen:\n");
+    printf("Bitte w\x84hlen:\n");
     printf("1 - leichtes Level spielen\n");
     printf("2 - mittleres Level spielen\n");
     printf("3 - schweres Level spielen\n");
-    printf("z - Zurueck zum Hauptmenue\n");
+    printf("z - Zur\x81ck zum Hauptmen\x81\n");
     printf("Eingabe: ");
     selection = getInput();
 
     CLS;
 
+    //initialize the game according to the selected difficulty or get back to the main menu
     switch (selection)
     {
     case '1':
-        printf("leichtes Level ausgewaehlt.\n");
+        printf("leichtes Level ausgew\x84hlt.\n");
         getAbsoluteFilePath(path, "files", "relax.sudoku");
         break;
     case '2':
-        printf("mittleres Level ausgewaehlt.\n");
+        printf("mittleres Level ausgew\x84hlt.\n");
         getAbsoluteFilePath(path, "files", "genius.sudoku");
         break;
     case '3':
-        printf("schweres Level ausgewaehlt.\n");
+        printf("schweres Level ausgew\x84hlt.\n");
         getAbsoluteFilePath(path, "files", "mastermind.sudoku");
         break;
     case '0':
-        //EASTER EGG
+        //Secret "Easter Egg" Sudoku (which are basically the credits)
         CLS;
         printf("Geheimes Easter Egg gefunden!\n\n");
         getAbsoluteFilePath(path, "files", "easterEgg.sudoku");

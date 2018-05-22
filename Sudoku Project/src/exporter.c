@@ -18,9 +18,11 @@ void writeSudokuToFile(char filename[], struct s_sudoku sudoku)
     fp = fopen(filename, "w");
     if(fp == NULL)
     {
+        //if the files could not be found and opened, create a new file with the given name and open it
         freopen(filename, "w", fp);
     }
 
+    //writing of the amount of moves and time so far
     fprintf(fp, "%s", "moves:");
     fprintf(fp, "%i\n", sudoku.moves);
 
@@ -29,6 +31,7 @@ void writeSudokuToFile(char filename[], struct s_sudoku sudoku)
 
     int i, j;
 
+    //write every digit field of the sudoku board into the file
     for (i = 0; i < 9; i++)
     {
         for (j = 0; j < 9; j++)

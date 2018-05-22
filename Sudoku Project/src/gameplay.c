@@ -10,6 +10,7 @@
 #include "../include/input.h"
 #include "../include/exporter.h"
 #include "../include/validator.h"
+#include "../include/generator.h"
 
 /*
 game rountine
@@ -42,10 +43,11 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
         printf("Moves: %i\n", sudoku.moves);
         printf("0-9 -> Wert an Stelle eintragen\n");
         printf("s -> Spielstand speichern und Spiel beenden\n");
-        printf("h -> Loesungshinweis einblenden\n");
-        printf("m -> Hauptmenue\n");
+        printf("h -> L\x94sungshinweis einblenden\n");
+        printf("m -> Hauptmen\x81\n");
         printf("e -> Spiel beenden\n\n");
 
+        //if the sudoku is successfully solved then end the game
         if(printSudoku(sudoku))
         {
             gameLoop = 0;
@@ -54,6 +56,7 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
             return sudoku;
         }
 
+        //Move the cursor to the desired position and don't let it get out of the board
         cursorGoTo(x,y);
 
         input = getMove();
@@ -83,6 +86,8 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
                 y++;
             }
             break;
+
+        //if a number was entered write it into the current sudoku field if allowed
         case '0' ... '9':
             input -= '0';
             row = (x/2)-cursorBoundary[0][0]+2;
@@ -93,6 +98,8 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
                 sudoku.moves++;
             }
             break;
+
+        //if the h-key was pressed, activate the help for the current editable field the cursor is standing on
         case 'h':
             row = (x/2)-cursorBoundary[0][0]+2;
             line = y-cursorBoundary[0][1];
@@ -108,14 +115,20 @@ struct s_sudoku gameRoutine(struct s_sudoku sudoku)
                 sudoku.moves++;
             }
             break;
+
+        //end the game when e was pressed
         case 'e':
             sudoku.navigation = 1;
             return sudoku;
             break;
+
+        //return to the menu
         case 'm':
             sudoku.navigation = -1;
             return sudoku;
             break;
+
+        //if the button s was pressed then save the current state and end the game
         case 's':
             sudoku.timeEnd = time(NULL);
             getAbsoluteFilePath(path, "files", "saveFile.sudoku");
