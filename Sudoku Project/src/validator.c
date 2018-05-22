@@ -93,7 +93,7 @@ int isBlockValid(int a_Sudoku[9][3][3], int blockNumber)
                     continue;
                 }
 
-//read the amount of moves that were stored in the file and write is into the moves variable of the sudoku struct
+                //read the amount of moves that were stored in the file and write is into the moves variable of the sudoku struct
                 if(a_Sudoku[blockNumber][row][line] == a_assistArray[arrayNumber])
                 {
                     a_assistArray[arrayNumber] = 0; //remove found number
@@ -123,7 +123,8 @@ int isLineValid(int a_Sudoku[9][3][3], int lineNumber)
 {
     int blockNumber = getBlockFromLine(lineNumber); //0-8
     int line = getBlockLineFromLine(lineNumber); //0-2
-//read the amount of moves that were stored in the file and write is into the moves variable of the sudoku struct
+
+    //read the amount of moves that were stored in the file and write is into the moves variable of the sudoku struct
     int block;
     int row;
     int arrayNumber = 0;

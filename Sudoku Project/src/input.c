@@ -74,7 +74,7 @@ int getMove()
     //https://www.c-plusplus.net/forum/39320-full
     while(move == '\0')
     {
-        //if keyboardhit then exec
+        //if keyboard hit then exec
         if(kbhit())
         {
             move = getch();
