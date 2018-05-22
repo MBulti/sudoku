@@ -15,7 +15,6 @@
 #include "../include/validator.h"
 #include "../include/importer.h"
 #include "../include/gameplay.h"
-#include "../include/generator.h"
 
 /*
 the start of the program

@@ -10,7 +10,6 @@
 #include "../include/validator.h"
 #include "../include/importer.h"
 #include "../include/input.h"
-#include "../include/generator.h"
 
 /*
 show main menu

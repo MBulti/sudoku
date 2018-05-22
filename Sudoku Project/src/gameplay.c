@@ -10,7 +10,6 @@
 #include "../include/input.h"
 #include "../include/exporter.h"
 #include "../include/validator.h"
-#include "../include/generator.h"
 
 /*
 game rountine
